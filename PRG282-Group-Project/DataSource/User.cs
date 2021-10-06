@@ -26,7 +26,7 @@ namespace PRG282_Group_Project.Models
         char gender;
         string phone;
         string Address;
-        List<Module> modules;
+        List<string> modules;
 
         //Default Student Constructor
         Student()
@@ -52,7 +52,7 @@ namespace PRG282_Group_Project.Models
             this.dob = dob;
             this.gender = gender;
             this.Address = address;
-            this.modules = new List<Modules>();
+            this.modules = new List<string>();
         }
 
         //Constructor to be used when retreiving Student info from DB
@@ -64,7 +64,12 @@ namespace PRG282_Group_Project.Models
             this.dob = dob;
             this.gender = gender;
             this.Address = address;
-            this.modules = modules;
+            this.modules = new List<string>();
+            foreach(Module module in modules)
+            {
+                this.modules.Add(module.getCode());
+            }
+            
         }
 
         Student(int student_nr, string name, string surname, Image picture, DateTime dob, char gender, string address, List<string> moduleCodes)
@@ -75,8 +80,7 @@ namespace PRG282_Group_Project.Models
             this.dob = dob;
             this.gender = gender;
             this.Address = address;
-            //TODO: Get all Modules for the coresponding module code
-            //this.modules = modules;
+            this.modules = moduleCodes;
         }
 
         int getStudentNumber()
@@ -122,19 +126,10 @@ namespace PRG282_Group_Project.Models
         {
             return phone;
         }
-        List<Module> getModules()
-        {
-            return modules;
-        }
 
         List<string> getModuleCodes()
         {
-            List<string> codes = new List<string>();
-            foreach(Module module in modules)
-            {
-                codes.Add(module.getCode());
-            }
-            return codes;
+            return modules;
         }
 
         void UpdatePicture(Image picture)
@@ -148,6 +143,8 @@ namespace PRG282_Group_Project.Models
     {
 
         string code;
+        string name;
+        string description;
 
         public string getCode()
         {
