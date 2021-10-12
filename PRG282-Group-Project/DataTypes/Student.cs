@@ -4,19 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using PRG282_Group_Project.DataTypes;
 
-namespace PRG282_Group_Project.Models
-
+namespace PRG282_Group_Project.DataTypes
 {
-    class User
-    {
-        string name;
-        string password;
-        bool isEncrypted;
-
-    }
-
-    class Student
+   public class Student
     {
         string name;
         string surname;
@@ -29,23 +21,23 @@ namespace PRG282_Group_Project.Models
         List<string> modules;
 
         //Default Student Constructor
-        Student()
+        public Student()
         {
 
         }
 
         //Constructor to be used when creating a new student to add to the database
-        Student(string name, string surname,DateTime dob,char gender,string address)
+        public Student(string name, string surname, DateTime dob, char gender, string address)
         {
             this.name = name;
             this.surname = surname;
             this.dob = dob;
             this.gender = gender;
             this.Address = address;
-            this.modules = new List<Modules>();
+            this.modules = new List<string>();
         }
 
-        Student(string name, string surname,Image picture, DateTime dob, char gender, string address)
+        public Student(string name, string surname, Image picture, DateTime dob, char gender, string address)
         {
             this.name = name;
             this.surname = surname;
@@ -56,7 +48,21 @@ namespace PRG282_Group_Project.Models
         }
 
         //Constructor to be used when retreiving Student info from DB
-        Student(int student_nr,string name, string surname,Image picture, DateTime dob, char gender, string address,List<Module> modules)
+        public Student(int student_nr, string name, string surname, Image picture, DateTime dob, char gender, string phone, string address, List<string> moduleCodes)
+        {
+            this.student_nr = student_nr;
+            this.name = name;
+            this.surname = surname;
+            this.dob = dob;
+            this.gender = gender;
+            this.Address = address;
+         
+            this.modules = moduleCodes;
+
+        }
+
+        //Constructor to be used when retreiving Student info from DB
+        public Student(int student_nr, string name, string surname, Image picture, DateTime dob, char gender, string address, List<Module> modules)
         {
             this.student_nr = student_nr;
             this.name = name;
@@ -65,14 +71,14 @@ namespace PRG282_Group_Project.Models
             this.gender = gender;
             this.Address = address;
             this.modules = new List<string>();
-            foreach(Module module in modules)
+            foreach (Module module in modules)
             {
                 this.modules.Add(module.getCode());
             }
-            
+
         }
 
-        Student(int student_nr, string name, string surname, Image picture, DateTime dob, char gender, string address, List<string> moduleCodes)
+        public Student(int student_nr, string name, string surname, Image picture, DateTime dob, char gender, string address, List<string> moduleCodes)
         {
             this.student_nr = student_nr;
             this.name = name;
@@ -83,21 +89,29 @@ namespace PRG282_Group_Project.Models
             this.modules = moduleCodes;
         }
 
-        int getStudentNumber()
+        public int getStudentNumber()
         {
             return student_nr;
         }
-        string getStudentName()
+        public string getFullName()
         {
             return $"{name} {surname}";
         }
+        public string getName()
+        {
+            return name;
+        }
+        public string getSurname()
+        {
+            return surname;
+        }
 
-        DateTime getDateOfBirth()
+        public DateTime getDateOfBirth()
         {
             return dob;
         }
 
-        int getAge()
+        public int getAge()
         {
             DateTime today = DateTime.Now;
 
@@ -109,7 +123,7 @@ namespace PRG282_Group_Project.Models
             return age;
         }
 
-        string getGender()
+        public string getGender()
         {
             if (char.ToLower(gender) == 'm')
             {
@@ -122,33 +136,31 @@ namespace PRG282_Group_Project.Models
             throw new Exception("Invalid Gender defined.");
         }
 
-        string getPhone()
+        public string getPhone()
         {
             return phone;
         }
 
-        List<string> getModuleCodes()
+        public string getAddress()
+        {
+            return Address;
+        }
+
+        public List<string> getModuleCodes()
         {
             return modules;
         }
 
-        void UpdatePicture(Image picture)
+        public void UpdatePicture(Image picture)
         {
             this.picture = picture;
         }
 
-    }
-
-    class Module
-    {
-
-        string code;
-        string name;
-        string description;
-
-        public string getCode()
+        public Image GetImage()
         {
-            return code;
+            return this.picture;
         }
+
     }
+
 }
