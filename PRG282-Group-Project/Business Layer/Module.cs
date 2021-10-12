@@ -6,22 +6,39 @@ using System.Threading.Tasks;
 
 namespace PRG282_Group_Project.Business_Layer
 {
-    class Module
+    public class Module
     {
-        string Code;
-        string Name;
-        string Description;
+        string _code;
+        string _name;
+        string _description;
         //resources
         public Module(string code, string name, string description)
         {
-            Code1 = code;
-            Name1 = name;
-            Description1 = description;
+            this._code = code;
+            this._name = name;
+            this._description = description;
         }
 
-        public string Code1 { get => Code; set => Code = value; }
-        public string Name1 { get => Name; set => Name = value; }
-        public string Description1 { get => Description; set => Description = value; }
+        //Gerhard van Zyl:
+        //My prefered method of getters and setters
+        //public string getCode()
+        //{
+        //    return _code;
+        //}
+        //public string getName()
+        //{
+        //    return _name;
+        //}
+        //public string getDescription()
+        //{
+        //    return _description;
+        //}
+
+        public string Code { get => _code; set => _code= value; }
+        public string Name { get => _name; set => _name = value; }
+        public string Description { get => _description; set => _description = value; }
         //resources
+
+        
     }
 }
