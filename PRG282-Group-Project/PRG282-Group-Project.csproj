@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0E12C100-3D1B-4FED-A243-C9697D59A456}</ProjectGuid>
+    <ProjectGuid>{480D23D3-6D5F-43A0-AFC2-944C503013A7}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>PRG282_Group_Project</RootNamespace>
     <AssemblyName>PRG282-Group-Project</AssemblyName>
@@ -46,14 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business Layer\Module.cs" />
+    <Compile Include="Business Layer\Student.cs" />
+    <Compile Include="Business Layer\User.cs" />
     <Compile Include="DataTypes\Module.cs" />
     <Compile Include="DataTypes\Student.cs" />
     <Compile Include="DataTypes\User.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Presentation Layer\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Presentation Layer\Form1.Designer.cs">
+      <DependentUpon>Presentation Layer\Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\DataHandler.cs" />
     <Compile Include="Program.cs" />

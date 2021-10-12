@@ -8,19 +8,19 @@ namespace PRG282_Group_Project.Business_Layer
 {
     class User
     {
-        string UserName;
-        string Password;
-        string Encrypted;
+        string _userName;
+        string _password;
+        string _encrypted;
 
-        public string UserName1 { get => UserName; set => UserName = value; }
-        public string Password1 { get => Password; set => Password = value; }
-        public string Encrypted1 { get => Encrypted; set => Encrypted = value; }
+        public string UserName { get => _userName; set => _userName = value; }
+        public string Password { get => _password; set => _password = value; }
+        public string Encrypted { get => _encrypted; set => _encrypted = value; }
 
         public User(string userName, string password, string encrypted)
         {
-            UserName = userName;
-            Password = password;
-            Encrypted = encrypted;
+            _userName = userName;
+            _password = password;
+            _encrypted = encrypted;
         }
 
         
