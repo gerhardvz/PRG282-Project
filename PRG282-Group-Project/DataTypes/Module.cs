@@ -17,5 +17,20 @@ namespace PRG282_Group_Project.DataTypes
         {
             return code;
         }
+        public string getName()
+        {
+            return name;
+        }
+        public string getDescription()
+        {
+            return description;
+        }
+
+       public Module(string code,string name,string description)
+        {
+            this.code = code;
+            this.name = name;
+            this.description = description;
+        }
     }
 }

@@ -161,6 +161,26 @@ namespace PRG282_Group_Project.DataTypes
             return this.picture;
         }
 
+        override
+        public string ToString()
+        {
+            //TODO
+            return "";
+        }
+
+        public void addModules(List<string> moduleList)
+        {
+            this.modules.AddRange(moduleList);
+        }
+        public void addModule(string moduleCode)
+        {
+            this.modules.Add(moduleCode);
+        }
+
+        public void setModules(List<string> moduleList)
+        {
+            this.modules = moduleList;
+        }
     }
 
 }

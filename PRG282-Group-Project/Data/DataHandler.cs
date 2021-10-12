@@ -50,7 +50,7 @@ namespace PRG282_Group_Project.NewFolder1
                     }
                     else
                     {
-                        SqlDataAdapter modulesAdapter = new SqlDataAdapter(command, conn);
+                        SqlDataAdapter modulesAdapter = new SqlDataAdapter(modulescmd, conn);
                         DataTable modulesDt = new DataTable();
                         modulesAdapter.Fill(modulesDt);
                         List<String> moduleList = new List<String>();
@@ -95,20 +95,58 @@ namespace PRG282_Group_Project.NewFolder1
 
         public List<Student> getStudentList()
         {
+            
             DataTable dt = getStudents();
+            List<Student> studentList = new List<Student>();
+            foreach (DataRow row in dt.Rows)
+            {
+                
+                
+                byte[] imgBytes = (byte[])dt.Rows[0]["image"];
+                MemoryStream ms = new MemoryStream(imgBytes);
+                Image img = Image.FromStream(ms);
+                string format = "ddd MMM dd yyyy 'GMT'zzz '(GMT Daylight Time)'";
 
-            //TODO
-            return new List<Student>();
+                DateTime dob = DateTime.ParseExact((string)dt.Rows[0]["dob"], format, System.Globalization.CultureInfo.InvariantCulture);
+
+                Student student = new Student(Convert.ToInt32(dt.Rows[0]["id"]), (string)dt.Rows[0]["name"], (string)dt.Rows[0]["surname"], img, dob, (char)dt.Rows[0]["gender"], (string)dt.Rows[0]["phone"], (string)dt.Rows[0]["address"], moduleList);
+                 List<string> moduleList = getStudentModuleList(student);
+                student.setModules(moduleList);
+                studentList.Add(student);
+            
+            }
+
+                //TODO
+                return studentList;
         }
 
-        public List<Student> findStudent(List<String> moduleCodes)
-        {
-            return new List<Student>(); 
-        }
 
-        public List<Student> findStudent(string name, string surname)
+        public DataTable getStudentModules(Student student)
         {
-            return new List<Student>();
+            using (SqlConnection conn = new SqlConnection(connectionPath))
+            {
+                string modulescmd = $"Select module FROM StudentModules WHERE id={student.getStudentNumber()}";
+                SqlDataAdapter modulesAdapter = new SqlDataAdapter(modulescmd, conn);
+                DataTable modulesDt = new DataTable();
+                modulesAdapter.Fill(modulesDt);
+
+                return modulesDt;
+            }
+
+            }
+      
+        public List<string> getStudentModuleList(Student student)
+        {
+            DataTable dt = getStudentModules(student);
+            List<string> moduleList = new List<string>();
+
+            foreach (DataRow row in dt.Rows)
+            {
+               
+                moduleList.Add((string)row["code"]);
+            }
+
+            return moduleList;
         }
 
         public void addStudent(Student student)
@@ -162,7 +200,7 @@ namespace PRG282_Group_Project.NewFolder1
 
         }
 
-            public void updateStudentPhone(Student student)
+        public void updateStudentPhone(Student student)
         {
            
             using (SqlConnection connection = new SqlConnection(connectionPath))
@@ -203,5 +241,67 @@ namespace PRG282_Group_Project.NewFolder1
             }
             return whereclause;
         }
-    }
+
+        //Modules
+
+        public void addModule(Module module)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionPath))
+            {
+                connection.Open();
+
+                string addStudentCmd = $"Insert into module(code,name,description) values ({module.getCode()},{module.getName()},{module.getDescription()})";
+
+
+                SqlCommand sqlCommand = new SqlCommand(addStudentCmd, connection);
+                sqlCommand.BeginExecuteNonQuery();
+               
+            }
+        }
+
+        public void updateDescription(Module module)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionPath))
+            {
+                connection.Open();
+
+                string addStudentCmd = $"Update module description={module.getDescription()} where code={module.getCode()})";
+
+
+                SqlCommand sqlCommand = new SqlCommand(addStudentCmd, connection);
+                sqlCommand.BeginExecuteNonQuery();
+
+            }
+        }
+        public DataTable getModules()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionPath))
+            {
+                string cmd = $"Select * FROM module";
+                conn.Open();
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd, conn);
+                DataTable dt = new DataTable();
+                dataAdapter.Fill(dt);
+                return dt;
+            }
+        }
+
+        public List<Module> getModuleList()
+        {
+            DataTable dt = getModules();
+            List<Module> moduleList = new List<Module>();
+
+            foreach(DataRow row in dt.Rows)
+            {
+                Module module = new Module((string)row["code"], (string)row["name"], (string)row["description"]);
+                moduleList.Add(module);
+            }
+
+            return moduleList;
+        }
+
+       
+
+    }   
+   
 }
