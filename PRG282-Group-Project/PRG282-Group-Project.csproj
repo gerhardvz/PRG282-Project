@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Bussiness Layer\" />
     <Folder Include="Data Access layer\" />
     <Folder Include="Data Layer\" />
   </ItemGroup>
