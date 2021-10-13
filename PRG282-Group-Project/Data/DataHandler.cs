@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PRG282_Group_Project.DataTypes;
+
 using System.Data.SqlClient;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using PRG282_Group_Project.Business_Layer;
 
-
-namespace PRG282_Group_Project.NewFolder1
+namespace PRG282_Group_Project.Data
 {
     public class DataHandler
     {
@@ -18,7 +18,7 @@ namespace PRG282_Group_Project.NewFolder1
 
         public Student getStudent(Student student)
         {
-            return getStudent(student.getStudentNumber());
+            return getStudent(student.StudentNumber);
         }
 
         public Student getStudent(int id)
@@ -109,9 +109,9 @@ namespace PRG282_Group_Project.NewFolder1
 
                 DateTime dob = DateTime.ParseExact((string)dt.Rows[0]["dob"], format, System.Globalization.CultureInfo.InvariantCulture);
 
-                Student student = new Student(Convert.ToInt32(dt.Rows[0]["id"]), (string)dt.Rows[0]["name"], (string)dt.Rows[0]["surname"], img, dob, (char)dt.Rows[0]["gender"], (string)dt.Rows[0]["phone"], (string)dt.Rows[0]["address"], moduleList);
+                Student student = new Student(Convert.ToInt32(dt.Rows[0]["id"]), (string)dt.Rows[0]["name"], (string)dt.Rows[0]["surname"], img, dob, (char)dt.Rows[0]["gender"], (string)dt.Rows[0]["phone"], (string)dt.Rows[0]["address"],new List<string>());
                  List<string> moduleList = getStudentModuleList(student);
-                student.setModules(moduleList);
+                student.ModuleCodes=moduleList;
                 studentList.Add(student);
             
             }
@@ -125,7 +125,7 @@ namespace PRG282_Group_Project.NewFolder1
         {
             using (SqlConnection conn = new SqlConnection(connectionPath))
             {
-                string modulescmd = $"Select module FROM StudentModules WHERE id={student.getStudentNumber()}";
+                string modulescmd = $"Select module FROM StudentModules WHERE id={student.StudentNumber}";
                 SqlDataAdapter modulesAdapter = new SqlDataAdapter(modulescmd, conn);
                 DataTable modulesDt = new DataTable();
                 modulesAdapter.Fill(modulesDt);
@@ -155,22 +155,22 @@ namespace PRG282_Group_Project.NewFolder1
             {
                 connection.Open();
 
-                string addStudentCmd = $"Insert into student(name,surname,dob,gender) values ({student.getName()},{student.getSurname()},{student.getDateOfBirth()},{student.getGender()})";
+                string addStudentCmd = $"Insert into student(name,surname,dob,gender) values ({student.Name},{student.Surname},{student.DateOfBirth},{student.Gender})";
 
                 SqlCommand sqlCommand = new SqlCommand(addStudentCmd, connection);
                 sqlCommand.BeginExecuteNonQuery();
-                if (student.GetImage() != null)
+                if (student.Image != null)
                 {
                     //UPDATE Student image
                     updateStudentImage(student);
                     
                 }
-                if (student.getPhone() != "")
+                if (student.Phone != "")
                 {
                     //UPDATE Student Phone
                     updateStudentPhone(student);
                 }
-                if (student.getAddress() != "")
+                if (student.Address != "")
                 {
                     //UPDATE Student Phone
                     updateStudentAddress(student);
@@ -187,7 +187,7 @@ namespace PRG282_Group_Project.NewFolder1
                 connection.Open();
 
                 using (MemoryStream imageStream = new MemoryStream()) { 
-                student.GetImage().Save(imageStream, student.GetImage().RawFormat);
+                student.Image.Save(imageStream, student.Image.RawFormat);
 
 
                 string updateStudentCmd = $"Update student image={imageStream} {SQLWhereClauseStudent(student)}";
@@ -207,7 +207,7 @@ namespace PRG282_Group_Project.NewFolder1
             {
                 connection.Open();
 
-                string updateStudentCmd = $"Update student phone={student.getPhone()} {SQLWhereClauseStudent(student)}";
+                string updateStudentCmd = $"Update student phone={student.Phone} {SQLWhereClauseStudent(student)}";
                 SqlCommand sqlCommand = new SqlCommand(updateStudentCmd, connection);
                 sqlCommand.BeginExecuteNonQuery();
             }
@@ -221,7 +221,7 @@ namespace PRG282_Group_Project.NewFolder1
             {
                 connection.Open();
 
-                string updateStudentCmd = $"Update student address={student.getAddress()}  {SQLWhereClauseStudent(student)}";
+                string updateStudentCmd = $"Update student address={student.Address}  {SQLWhereClauseStudent(student)}";
                 SqlCommand sqlCommand = new SqlCommand(updateStudentCmd, connection);
                 sqlCommand.BeginExecuteNonQuery();
             }
@@ -230,13 +230,13 @@ namespace PRG282_Group_Project.NewFolder1
         private string SQLWhereClauseStudent(Student student)
         {
             string whereclause = "";
-            if (student.getStudentNumber() > 0)
+            if (student.StudentNumber > 0)
             {
-                whereclause = $" where id = {student.getStudentNumber()}";
+                whereclause = $" where id = {student.StudentNumber}";
             }
             else
             {
-                whereclause = $" where name = {student.getName()} , surname = {student.getSurname()},dob = {student.getDateOfBirth()}";
+                whereclause = $" where name = {student.Name} , surname = {student.Surname},dob = {student.DateOfBirth}";
 
             }
             return whereclause;
@@ -250,7 +250,7 @@ namespace PRG282_Group_Project.NewFolder1
             {
                 connection.Open();
 
-                string addStudentCmd = $"Insert into module(code,name,description) values ({module.getCode()},{module.getName()},{module.getDescription()})";
+                string addStudentCmd = $"Insert into module(code,name,description) values ({module.Code},{module.Name},{module.Description})";
 
 
                 SqlCommand sqlCommand = new SqlCommand(addStudentCmd, connection);
@@ -265,7 +265,7 @@ namespace PRG282_Group_Project.NewFolder1
             {
                 connection.Open();
 
-                string addStudentCmd = $"Update module description={module.getDescription()} where code={module.getCode()})";
+                string addStudentCmd = $"Update module description={module.Description} where code={module.Code})";
 
 
                 SqlCommand sqlCommand = new SqlCommand(addStudentCmd, connection);
