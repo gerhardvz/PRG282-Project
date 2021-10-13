@@ -54,37 +54,33 @@
     <Compile Include="Business Layer\Insert_User.cs" />
     <Compile Include="Business Layer\Module.cs" />
     <Compile Include="Business Layer\Student.cs" />
-    <Compile Include="Business Layer\UpdateStudent.cs" />
-
-    
+    <Compile Include="Business Layer\UpdateStudent.cs" />   
     <Compile Include="Business Layer\ModuleResource.cs" />
-    
-
     <Compile Include="Business Layer\User.cs" />
+	  
     <Compile Include="DataTypes\Module.cs" />
     <Compile Include="DataTypes\Student.cs" />
     <Compile Include="DataTypes\User.cs" />
-
-    <Compile Include="Presentation Layer\Main.cs">
-
-
     <Compile Include="Data\FileHandler.cs" />
     <Compile Include="Data\HandlerExceptions.cs" />
-    
+  
 
     <Compile Include="Presentation Layer\Main.cs">
-
       <SubType>Form</SubType>
     </Compile>
+	
     <Compile Include="Presentation Layer\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+		
     <Compile Include="Presentation Layer\Module.cs">
       <SubType>Form</SubType>
     </Compile>
+		
     <Compile Include="Presentation Layer\Module.Designer.cs">
       <DependentUpon>Module.cs</DependentUpon>
     </Compile>
+		
     <Compile Include="Presentation Layer\Student.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,11 +137,15 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+	
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+	
   <ItemGroup>
     <None Include="Presentation Layer\images\login_bg.png" />
   </ItemGroup>
+	
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
+ 
