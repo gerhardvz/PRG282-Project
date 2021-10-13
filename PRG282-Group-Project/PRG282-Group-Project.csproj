@@ -70,8 +70,10 @@
 
     <Compile Include="Data\FileHandler.cs" />
     <Compile Include="Data\HandlerExceptions.cs" />
+    
 
-    <Compile Include="Presentation Layer\Form1.cs">
+    <Compile Include="Presentation Layer\Main.cs">
+
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation Layer\Main.Designer.cs">
