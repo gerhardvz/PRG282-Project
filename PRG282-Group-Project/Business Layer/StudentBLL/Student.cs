@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace PRG282_Group_Project.Business_Layer
 {
-    public class Student
+    public class Student 
     {
         int _number;
         string _name;

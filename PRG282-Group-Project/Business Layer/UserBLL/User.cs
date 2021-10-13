@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace PRG282_Group_Project.Business_Layer
 {
-    public class User
-    {
+    public class User 
+    {   
         string _userName;
         string _password;
         string _encrypted;

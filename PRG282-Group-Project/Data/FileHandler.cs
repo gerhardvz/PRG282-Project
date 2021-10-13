@@ -13,7 +13,7 @@ namespace PRG282_Group_Project.Data
     {
 
         string filename = "Users";
-        FileHandler()
+       public FileHandler()
         {
 
         }
@@ -40,6 +40,11 @@ namespace PRG282_Group_Project.Data
                 }
             }
             throw new  UserNotFoundException("User: \""+ username+"\" not found");
+        }
+
+        internal string addUser(string nuser)
+        {
+            throw new NotImplementedException();
         }
 
         public void addUser(User newUser)

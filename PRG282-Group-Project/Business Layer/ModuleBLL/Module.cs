@@ -25,21 +25,6 @@ namespace PRG282_Group_Project.Business_Layer
 
         }
 
-        //Gerhard van Zyl:
-        //My prefered method of getters and setters
-        //public string getCode()
-        //{
-        //    return _code;
-        //}
-        //public string getName()
-        //{
-        //    return _name;
-        //}
-        //public string getDescription()
-        //{
-        //    return _description;
-        //}
-
         public string Code { get => _code; set => _code= value; }
         public string Name { get => _name; set => _name = value; }
         public string Description { get => _description; set => _description = value; }

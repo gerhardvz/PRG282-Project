@@ -85,6 +85,11 @@ namespace PRG282_Group_Project.Data
             throw new NotImplementedException();
         }
 
+        internal string updateStudentPhone(string studentP)
+        {
+            throw new NotImplementedException();
+        }
+
         public DataTable getStudents()
         {
            
@@ -104,7 +109,7 @@ namespace PRG282_Group_Project.Data
 
         }
 
-        public List<Student> getStudentList()
+        public List<Student> getStudentList(string st)
         {
             
             DataTable dt = getStudents();
@@ -346,7 +351,30 @@ namespace PRG282_Group_Project.Data
             return moduleList;
         }
 
+        internal string updateStudentAddress(string studentA)
+        {
+            throw new NotImplementedException();
+        }
 
+        internal string getModules(string modL)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal string getStudents(string st)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal string addModule(string mod)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal string addStudent(string s)
+        {
+            throw new NotImplementedException();
+        }
 
     }   
    
