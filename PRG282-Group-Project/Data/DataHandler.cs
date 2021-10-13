@@ -78,11 +78,22 @@ namespace PRG282_Group_Project.Data
                     return stud;
                 }
             }
-            catch (SqlException e)
+            catch (SqlException ex)
             {
 
             }
             throw new NotImplementedException();
+        }
+
+        public void delStudent(Student student)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionPath))
+            {
+                string cmd = $"delete  FROM student where id={student.StudentNumber}";
+                conn.Open();
+                SqlCommand sqlCommand = new SqlCommand(cmd,conn);
+                sqlCommand.BeginExecuteNonQuery();
+            }
         }
 
         public DataTable getStudents()
@@ -346,8 +357,79 @@ namespace PRG282_Group_Project.Data
             return moduleList;
         }
 
+        public void delModule(Module module)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionPath))
+            {
+                conn.Open();
 
+                delStudentModule(module);
+          
+                delModuleResource(module);
 
+                string cmd = $"delete  FROM class_module where module={module.Code}";
+                
+                SqlCommand sqlCommand = new SqlCommand(cmd, conn);
+                sqlCommand.BeginExecuteNonQuery();
+            }
+        }
+
+        public void delModuleResource(Module module)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionPath))
+            {
+                
+                    string cmd = $"delete  FROM module_resource where module_code={module.Code}";
+
+                    SqlCommand sqlCommand = new SqlCommand(cmd, conn);
+                    sqlCommand.BeginExecuteNonQuery();
+                
+               
+            }
+        }
+        public void delModuleResource(ModuleResource moduleResource)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionPath))
+            {
+                if (moduleResource.ModuleCode != "")
+                {
+                    string cmd = $"delete  FROM module_resource where module_code={moduleResource.ModuleCode}";
+
+                    SqlCommand sqlCommand = new SqlCommand(cmd, conn);
+                    sqlCommand.BeginExecuteNonQuery();
+                }
+                if (moduleResource.URL != "")
+                {
+                    string cmd = $"delete  FROM module_resource where url={moduleResource.URL}";
+
+                    SqlCommand sqlCommand = new SqlCommand(cmd, conn);
+                    sqlCommand.BeginExecuteNonQuery();
+                }
+            }
+        }
+
+        public void delStudentModule(Student student) {
+            using (SqlConnection conn = new SqlConnection(connectionPath))
+            {
+                conn.Open();
+                string cmd = $"delete  FROM student_module where student_nr={student.StudentNumber}";
+
+                SqlCommand sqlCommand = new SqlCommand(cmd, conn);
+                sqlCommand.BeginExecuteNonQuery();
+            }
+        }
+
+        public void delStudentModule(Module module)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionPath))
+            {
+                conn.Open();
+                string cmd = $"delete  FROM student_module where module={module.Code}";
+
+                SqlCommand sqlCommand = new SqlCommand(cmd, conn);
+                sqlCommand.BeginExecuteNonQuery();
+            }
+        }
     }   
    
 }

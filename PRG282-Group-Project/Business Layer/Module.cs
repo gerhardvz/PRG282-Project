@@ -25,6 +25,12 @@ namespace PRG282_Group_Project.Business_Layer
 
         }
 
+        public Module()
+        {
+          
+
+        }
+
         //Gerhard van Zyl:
         //My prefered method of getters and setters
         //public string getCode()
@@ -48,7 +54,7 @@ namespace PRG282_Group_Project.Business_Layer
 
         public void addResource(string name, string url)
         {
-            _resource.Add(new ModuleResource(name, url));
+            _resource.Add(new ModuleResource(_code,name, url));
         }
 
         //resources

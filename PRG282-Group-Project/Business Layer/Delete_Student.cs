@@ -11,6 +11,7 @@ namespace PRG282_Group_Project.Business_Layer
         public string Delete()
         {
             //there's no delete student in the datahandler yet.
+            //Sorry Will add now 22:06
         }
     }
 }
