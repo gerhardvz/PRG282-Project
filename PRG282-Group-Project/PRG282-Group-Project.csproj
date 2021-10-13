@@ -46,41 +46,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
-
-    <Compile Include="Business Layer\Delete_Student.cs" />
-    <Compile Include="Business Layer\IAddStudent.cs" />
-    <Compile Include="Business Layer\Insert_Module.cs" />
-    <Compile Include="Business Layer\Insert_Student.cs" />
-    <Compile Include="Business Layer\Insert_User.cs" />
-    <Compile Include="Business Layer\Module.cs" />
-    <Compile Include="Business Layer\Student.cs" />
-    <Compile Include="Business Layer\UpdateStudent.cs" />
-
-    
-    <Compile Include="Business Layer\ModuleResource.cs" />
-    
-
-    <Compile Include="Business Layer\User.cs" />
-=======
-    <Compile Include="Business Layer\ModuleBLL\Read_Module.cs" />
-    <Compile Include="Business Layer\StudentBLL\Read_Student.cs" />
     <Compile Include="Business Layer\ModuleBLL\Insert_Module.cs" />
-    <Compile Include="Business Layer\StudentBLL\Insert_Student.cs" />
     <Compile Include="Business Layer\ModuleBLL\Module.cs" />
     <Compile Include="Business Layer\ModuleBLL\ModuleResource.cs" />
+    <Compile Include="Business Layer\ModuleBLL\Read_Modules.cs" />
+    <Compile Include="Business Layer\StudentBLL\Insert_Student.cs" />
+    <Compile Include="Business Layer\StudentBLL\Read_Student.cs" />
     <Compile Include="Business Layer\StudentBLL\Student.cs" />
     <Compile Include="Business Layer\StudentBLL\Update_Student.cs" />
     <Compile Include="Business Layer\UserBLL\Insert_User.cs" />
     <Compile Include="Business Layer\UserBLL\User.cs" />
->>>>>>> Stashed changes
     <Compile Include="DataTypes\Module.cs" />
     <Compile Include="DataTypes\Student.cs" />
     <Compile Include="DataTypes\User.cs" />
-
     <Compile Include="Data\FileHandler.cs" />
     <Compile Include="Data\HandlerExceptions.cs" />
-
     <Compile Include="Presentation Layer\Form1.cs">
       <SubType>Form</SubType>
     </Compile>

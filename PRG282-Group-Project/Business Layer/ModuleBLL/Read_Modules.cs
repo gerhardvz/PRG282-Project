@@ -5,16 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using PRG282_Group_Project.Data;
 
-namespace PRG282_Group_Project.Business_Layer
+namespace PRG282_Group_Project.Business_Layer.ModuleBLL
 {
-    class Insert_Student
+    class Read_Module
     {
-        public string Insert(string s)
+        public string Read(string ModL)
         {
             DataHandler dh = new DataHandler();
-            string StudentAdded = dh.addStudent(s);
-
-            return StudentAdded;
+            string ModuleL = dh.getModules(ModL);
+            return ModuleL;
         }
 
         public string validation()

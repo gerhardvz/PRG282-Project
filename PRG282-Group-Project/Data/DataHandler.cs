@@ -9,20 +9,13 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using PRG282_Group_Project.Business_Layer;
-
 using PRG282_Group_Project.Exeptions;
-
 
 namespace PRG282_Group_Project.Data
 {
     public class DataHandler
     {
         string connectionPath = "Data Source= (local); Initial Catalog= BC_Informatics; Integrated Security=True";
-
-        public Student getStudent(Student student)
-        {
-            return getStudent(student.StudentNumber);
-        }
 
         public Student getStudent(int id)
         {
@@ -32,11 +25,9 @@ namespace PRG282_Group_Project.Data
                 using (SqlConnection conn = new SqlConnection(connectionPath))
                 {
                     Student stud;
-
                     string command = $"Select id,name,surname,image,dob,gender,phone,address FROM student WHERE id={id}";
 
                     string modulescmd = $"Select module FROM student_modules WHERE id={id}";
-
                     conn.Open();
 
 
@@ -47,13 +38,11 @@ namespace PRG282_Group_Project.Data
 
                     if (dt.Rows.Count > 0)
                     {
-
                         throw new StudentNotFoundException(id);
                     }
                     else if (dt.Rows.Count > 1)
                     {
                         throw new DuplicateStudentException(id);
-
                     }
                     else
                     {
@@ -85,11 +74,6 @@ namespace PRG282_Group_Project.Data
             throw new NotImplementedException();
         }
 
-        internal string updateStudentPhone(string studentP)
-        {
-            throw new NotImplementedException();
-        }
-
         public DataTable getStudents()
         {
            
@@ -100,16 +84,14 @@ namespace PRG282_Group_Project.Data
                     SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd, conn);
                     DataTable dt = new DataTable();
                     dataAdapter.Fill(dt);
-
                 if (dt.Rows.Count == 0)
                     throw new StudentNotFoundException();
-
                     return dt;
                 }
 
         }
 
-        public List<Student> getStudentList(string st)
+        public List<Student> getStudentList()
         {
             
             DataTable dt = getStudents();
@@ -141,9 +123,7 @@ namespace PRG282_Group_Project.Data
         {
             using (SqlConnection conn = new SqlConnection(connectionPath))
             {
-
-                string modulescmd = $"Select module FROM student_modules WHERE id={student.StudentNumber}";
-
+                string modulescmd = $"Select module FROM student modules WHERE id={student.StudentNumber}";
                 SqlDataAdapter modulesAdapter = new SqlDataAdapter(modulescmd, conn);
                 DataTable modulesDt = new DataTable();
                 modulesAdapter.Fill(modulesDt);
@@ -300,10 +280,8 @@ namespace PRG282_Group_Project.Data
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd, conn);
                 DataTable dt = new DataTable();
                 dataAdapter.Fill(dt);
-
                 if (dt.Rows.Count <= 0)
                     throw new ModuleNotFoundException();
-
                 return dt;
             }
         }
@@ -321,7 +299,6 @@ namespace PRG282_Group_Project.Data
 
             return moduleList;
         }
-
         public DataTable getModuleResources(string moduleCode)
         {
             using (SqlConnection conn = new SqlConnection(connectionPath))
@@ -356,12 +333,22 @@ namespace PRG282_Group_Project.Data
             throw new NotImplementedException();
         }
 
-        internal string getModules(string modL)
+        internal string getStudents(string st)
         {
             throw new NotImplementedException();
         }
 
-        internal string getStudents(string st)
+        internal string updateStudentPhone(string studentP)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal string addStudent(string s)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal string getModules(string modL)
         {
             throw new NotImplementedException();
         }
@@ -371,10 +358,11 @@ namespace PRG282_Group_Project.Data
             throw new NotImplementedException();
         }
 
-        internal string addStudent(string s)
+        public Student getStudent(Student student)
         {
-            throw new NotImplementedException();
+            return getStudent(student.StudentNumber);
         }
+
 
     }   
    
