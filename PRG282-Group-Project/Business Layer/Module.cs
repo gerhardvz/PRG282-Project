@@ -11,12 +11,18 @@ namespace PRG282_Group_Project.Business_Layer
         string _code;
         string _name;
         string _description;
+
+        List<ModuleResource> _resource;
+
         //resources
         public Module(string code, string name, string description)
         {
             this._code = code;
             this._name = name;
             this._description = description;
+
+            this._resource = new List<ModuleResource>();
+
         }
 
         //Gerhard van Zyl:
@@ -37,6 +43,14 @@ namespace PRG282_Group_Project.Business_Layer
         public string Code { get => _code; set => _code= value; }
         public string Name { get => _name; set => _name = value; }
         public string Description { get => _description; set => _description = value; }
+
+        public List<ModuleResource> Resources { get => _resource; set => _resource = value; }
+
+        public void addResource(string name, string url)
+        {
+            _resource.Add(new ModuleResource(name, url));
+        }
+
         //resources
 
         
