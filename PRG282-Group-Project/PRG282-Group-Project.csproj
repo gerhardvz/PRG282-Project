@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business Layer\Module.cs" />
+    <Compile Include="Business Layer\ModuleResource.cs" />
     <Compile Include="Business Layer\Student.cs" />
     <Compile Include="Business Layer\User.cs" />
     <Compile Include="DataTypes\Module.cs" />

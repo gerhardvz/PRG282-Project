@@ -79,4 +79,39 @@ namespace PRG282_Group_Project.Exeptions
 
         }
     }
+
+    public class ModuleException : Exception
+        {
+            public ModuleException() : base("Module Exception")
+            {
+
+            }
+            public ModuleException(string exception) : base(exception)
+            {
+
+            }
+        }
+
+        public class ModuleNotFoundException : ModuleException
+        {
+            public ModuleNotFoundException():base("Module not found")
+            {
+
+            }
+            public ModuleNotFoundException(string code) : base($"Module with code: {code} not found")
+            {
+
+            }
+
+        }
+
+        public class ModuleResourceNotFoundException : ModuleException
+        {
+            public ModuleResourceNotFoundException():base("Module Resource not found")
+            {
+
+            }
+
+        }
+    
 }
