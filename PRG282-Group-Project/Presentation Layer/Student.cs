@@ -10,21 +10,19 @@ using System.Windows.Forms;
 
 namespace PRG282_Group_Project
 {
-    public partial class frm_Existing_Account : Form
+    public partial class frmStudent : Form
     {
-        public frm_Existing_Account()
+        public frmStudent()
         {
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+
+    
+
+        private void btnAddModule_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
+            //Show Form to select Modules to add to Student Module List
         }
     }
 }

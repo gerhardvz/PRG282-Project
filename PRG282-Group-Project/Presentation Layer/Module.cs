@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PRG282_Group_Project.Presentation_Layer
 {
-    public partial class frm_New_Account : Form
+    public partial class Module : Form
     {
-        public frm_New_Account()
+        public Module()
         {
             InitializeComponent();
-        }
-
-        private void Form3_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

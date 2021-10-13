@@ -10,11 +10,22 @@ using System.Windows.Forms;
 
 namespace PRG282_Group_Project.Presentation_Layer
 {
-    public partial class frm_Data_Student : Form
+    public partial class frmMain : Form
     {
-        public frm_Data_Student()
+        public frmMain()
         {
             InitializeComponent();
+
+        }
+
+        private void btnStudents_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnModules_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
