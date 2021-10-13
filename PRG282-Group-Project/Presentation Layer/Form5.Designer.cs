@@ -46,17 +46,15 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.btn_Home2.TabIndex = 9;
             this.btn_Home2.Text = "Home";
             this.btn_Home2.UseVisualStyleBackColor = true;
-            this.btn_Home2.Click += new System.EventHandler(this.btn_Home2_Click);
             // 
             // btn_Data_Module
             // 
-            btn_Data_Module.Location = new System.Drawing.Point(102, 353);
+            btn_Data_Module.Location = new System.Drawing.Point(98, 353);
             btn_Data_Module.Name = "btn_Data_Module";
             btn_Data_Module.Size = new System.Drawing.Size(131, 23);
             btn_Data_Module.TabIndex = 8;
             btn_Data_Module.Text = "Data Module";
             btn_Data_Module.UseVisualStyleBackColor = true;
-            btn_Data_Module.Click += new System.EventHandler(this.btn_Data_Module_Click);
             // 
             // btn_Right2
             // 

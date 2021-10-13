@@ -74,7 +74,6 @@ namespace PRG282_Group_Project
             this.btn_Login.TabIndex = 4;
             this.btn_Login.Text = "Login";
             this.btn_Login.UseVisualStyleBackColor = true;
-            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             // 
             // btn_NewAccount
             // 
@@ -84,7 +83,6 @@ namespace PRG282_Group_Project
             this.btn_NewAccount.TabIndex = 5;
             this.btn_NewAccount.Text = "New Account";
             this.btn_NewAccount.UseVisualStyleBackColor = true;
-            this.btn_NewAccount.Click += new System.EventHandler(this.btn_NewAccount_Click);
             // 
             // frm_Login
             // 
@@ -105,19 +103,6 @@ namespace PRG282_Group_Project
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void btn_Login_Click(object sender, EventArgs e)
-        {
-            Form frm_Existing_Account = new Form();
-            frm_Existing_Account.ShowDialog();
-        }
-
-        private void btn_NewAccount_Click(object sender, EventArgs e)
-        {
-            Form frm_New_Account = new Form();
-            frm_New_Account.ShowDialog();
 
         }
     }

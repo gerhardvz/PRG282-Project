@@ -26,16 +26,5 @@ namespace PRG282_Group_Project
         {
 
         }
-
-        private void btnGet_Data_Click(object sender, EventArgs e)
-        {
-            Form frm_Data_Student = new Form();
-            frm_Data_Student.ShowDialog();
-        }
-
-        private void btn_Log_Out1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }

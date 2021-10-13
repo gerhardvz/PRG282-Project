@@ -16,18 +16,5 @@ namespace PRG282_Group_Project.Presentation_Layer
         {
             InitializeComponent();
         }
-
-        private void btn_Data_Student_Click(object sender, EventArgs e)
-        {
-            Form frm_Data_Student = new Form();
-            frm_Data_Student.ShowDialog();
-
-        }
-
-        private void btn_Home1_Click(object sender, EventArgs e)
-        {
-            Form frm_Login = new Form();
-            frm_Login.ShowDialog();
-        }
     }
 }

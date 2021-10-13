@@ -44,7 +44,6 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.btn_Log_Out2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Female
@@ -174,23 +173,11 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 34;
             // 
-            // btn_Log_Out2
-            // 
-            this.btn_Log_Out2.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.btn_Log_Out2.Location = new System.Drawing.Point(322, 179);
-            this.btn_Log_Out2.Name = "btn_Log_Out2";
-            this.btn_Log_Out2.Size = new System.Drawing.Size(75, 23);
-            this.btn_Log_Out2.TabIndex = 35;
-            this.btn_Log_Out2.Text = "Log Out";
-            this.btn_Log_Out2.UseVisualStyleBackColor = true;
-            this.btn_Log_Out2.Click += new System.EventHandler(this.btn_Log_Out1_Click);
-            // 
             // frm_New_Account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 236);
-            this.Controls.Add(this.btn_Log_Out2);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btn_Female);
@@ -231,6 +218,5 @@ namespace PRG282_Group_Project.Presentation_Layer
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button btn_Log_Out2;
     }
 }

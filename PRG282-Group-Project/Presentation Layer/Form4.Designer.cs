@@ -71,7 +71,6 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.btn_Data_Student.TabIndex = 3;
             this.btn_Data_Student.Text = "Data Student";
             this.btn_Data_Student.UseVisualStyleBackColor = true;
-            this.btn_Data_Student.Click += new System.EventHandler(this.btn_Data_Student_Click);
             // 
             // btn_Home1
             // 
@@ -81,7 +80,6 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.btn_Home1.TabIndex = 4;
             this.btn_Home1.Text = "Home";
             this.btn_Home1.UseVisualStyleBackColor = true;
-            this.btn_Home1.Click += new System.EventHandler(this.btn_Home1_Click);
             // 
             // frm_Data_Module
             // 
