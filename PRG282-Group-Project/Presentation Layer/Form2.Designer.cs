@@ -46,7 +46,13 @@ namespace PRG282_Group_Project
             this.btn_Female = new System.Windows.Forms.RadioButton();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Update = new System.Windows.Forms.Button();
+            this.btn_Delete = new System.Windows.Forms.Button();
+            this.btnGet_Data = new System.Windows.Forms.Button();
+            this.btn_Log_Out = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -194,11 +200,61 @@ namespace PRG282_Group_Project
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnGet_Data);
+            this.panel1.Controls.Add(this.btn_Delete);
+            this.panel1.Controls.Add(this.btn_Update);
+            this.panel1.Location = new System.Drawing.Point(408, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(164, 150);
+            this.panel1.TabIndex = 18;
+            // 
+            // btn_Update
+            // 
+            this.btn_Update.Location = new System.Drawing.Point(47, 10);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(75, 23);
+            this.btn_Update.TabIndex = 0;
+            this.btn_Update.Text = "Update";
+            this.btn_Update.UseVisualStyleBackColor = true;
+            // 
+            // btn_Delete
+            // 
+            this.btn_Delete.Location = new System.Drawing.Point(47, 60);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(75, 23);
+            this.btn_Delete.TabIndex = 1;
+            this.btn_Delete.Text = "Delete";
+            this.btn_Delete.UseVisualStyleBackColor = true;
+            // 
+            // btnGet_Data
+            // 
+            this.btnGet_Data.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.btnGet_Data.Location = new System.Drawing.Point(45, 102);
+            this.btnGet_Data.Name = "btnGet_Data";
+            this.btnGet_Data.Size = new System.Drawing.Size(75, 23);
+            this.btnGet_Data.TabIndex = 2;
+            this.btnGet_Data.Text = "Get Data";
+            this.btnGet_Data.UseVisualStyleBackColor = true;
+            // 
+            // btn_Log_Out
+            // 
+            this.btn_Log_Out.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.btn_Log_Out.Location = new System.Drawing.Point(453, 247);
+            this.btn_Log_Out.Name = "btn_Log_Out";
+            this.btn_Log_Out.Size = new System.Drawing.Size(75, 23);
+            this.btn_Log_Out.TabIndex = 3;
+            this.btn_Log_Out.Text = "Log Out";
+            this.btn_Log_Out.UseVisualStyleBackColor = true;
+            // 
             // frm_Existing_Account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 450);
+            this.ClientSize = new System.Drawing.Size(1174, 450);
+            this.Controls.Add(this.btn_Log_Out);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btn_Female);
@@ -220,6 +276,7 @@ namespace PRG282_Group_Project
             this.Text = "Existing Account";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,5 +301,10 @@ namespace PRG282_Group_Project
         private System.Windows.Forms.RadioButton btn_Female;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnGet_Data;
+        private System.Windows.Forms.Button btn_Delete;
+        private System.Windows.Forms.Button btn_Update;
+        private System.Windows.Forms.Button btn_Log_Out;
     }
 }
