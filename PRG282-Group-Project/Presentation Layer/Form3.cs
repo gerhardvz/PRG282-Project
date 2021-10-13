@@ -21,5 +21,11 @@ namespace PRG282_Group_Project.Presentation_Layer
         {
 
         }
+
+        private void btn_Log_Out1_Click(object sender, EventArgs e)
+        {
+
+            this.Close();
+        }
     }
 }

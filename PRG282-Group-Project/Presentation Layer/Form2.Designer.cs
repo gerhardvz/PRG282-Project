@@ -50,7 +50,7 @@ namespace PRG282_Group_Project
             this.btn_Update = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btnGet_Data = new System.Windows.Forms.Button();
-            this.btn_Log_Out = new System.Windows.Forms.Button();
+            this.btn_Log_Out1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -237,23 +237,25 @@ namespace PRG282_Group_Project
             this.btnGet_Data.TabIndex = 2;
             this.btnGet_Data.Text = "Get Data";
             this.btnGet_Data.UseVisualStyleBackColor = true;
+            this.btnGet_Data.Click += new System.EventHandler(this.btnGet_Data_Click);
             // 
-            // btn_Log_Out
+            // btn_Log_Out1
             // 
-            this.btn_Log_Out.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.btn_Log_Out.Location = new System.Drawing.Point(453, 247);
-            this.btn_Log_Out.Name = "btn_Log_Out";
-            this.btn_Log_Out.Size = new System.Drawing.Size(75, 23);
-            this.btn_Log_Out.TabIndex = 3;
-            this.btn_Log_Out.Text = "Log Out";
-            this.btn_Log_Out.UseVisualStyleBackColor = true;
+            this.btn_Log_Out1.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.btn_Log_Out1.Location = new System.Drawing.Point(453, 247);
+            this.btn_Log_Out1.Name = "btn_Log_Out1";
+            this.btn_Log_Out1.Size = new System.Drawing.Size(75, 23);
+            this.btn_Log_Out1.TabIndex = 3;
+            this.btn_Log_Out1.Text = "Log Out";
+            this.btn_Log_Out1.UseVisualStyleBackColor = true;
+            this.btn_Log_Out1.Click += new System.EventHandler(this.btn_Log_Out1_Click);
             // 
             // frm_Existing_Account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1174, 450);
-            this.Controls.Add(this.btn_Log_Out);
+            this.ClientSize = new System.Drawing.Size(595, 450);
+            this.Controls.Add(this.btn_Log_Out1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label8);
@@ -305,6 +307,6 @@ namespace PRG282_Group_Project
         private System.Windows.Forms.Button btnGet_Data;
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Button btn_Update;
-        private System.Windows.Forms.Button btn_Log_Out;
+        private System.Windows.Forms.Button btn_Log_Out1;
     }
 }
