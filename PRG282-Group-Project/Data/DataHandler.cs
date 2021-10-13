@@ -10,16 +10,14 @@ using System.Drawing;
 using System.IO;
 using PRG282_Group_Project.Business_Layer;
 
+using PRG282_Group_Project.Exeptions;
+
+
 namespace PRG282_Group_Project.Data
 {
     public class DataHandler
     {
         string connectionPath = "Data Source= (local); Initial Catalog= BC_Informatics; Integrated Security=True";
-
-        internal string addStudent()
-        {
-            throw new NotImplementedException();
-        }
 
         public Student getStudent(Student student)
         {
@@ -34,9 +32,11 @@ namespace PRG282_Group_Project.Data
                 using (SqlConnection conn = new SqlConnection(connectionPath))
                 {
                     Student stud;
-                    string command = $"Select id,name,surname,image,dob,gender,phone,address FROM Student WHERE id={id}";
 
-                    string modulescmd = $"Select module FROM StudentModules WHERE id={id}";
+                    string command = $"Select id,name,surname,image,dob,gender,phone,address FROM student WHERE id={id}";
+
+                    string modulescmd = $"Select module FROM student_modules WHERE id={id}";
+
                     conn.Open();
 
 
@@ -47,11 +47,13 @@ namespace PRG282_Group_Project.Data
 
                     if (dt.Rows.Count > 0)
                     {
-                        throw new Exception("No students found with id");
+
+                        throw new StudentNotFoundException(id);
                     }
                     else if (dt.Rows.Count > 1)
                     {
-                        throw new Exception("To many students with same ID.");
+                        throw new DuplicateStudentException(id);
+
                     }
                     else
                     {
@@ -93,6 +95,10 @@ namespace PRG282_Group_Project.Data
                     SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd, conn);
                     DataTable dt = new DataTable();
                     dataAdapter.Fill(dt);
+
+                if (dt.Rows.Count == 0)
+                    throw new StudentNotFoundException();
+
                     return dt;
                 }
 
@@ -130,7 +136,9 @@ namespace PRG282_Group_Project.Data
         {
             using (SqlConnection conn = new SqlConnection(connectionPath))
             {
-                string modulescmd = $"Select module FROM StudentModules WHERE id={student.StudentNumber}";
+
+                string modulescmd = $"Select module FROM student_modules WHERE id={student.StudentNumber}";
+
                 SqlDataAdapter modulesAdapter = new SqlDataAdapter(modulescmd, conn);
                 DataTable modulesDt = new DataTable();
                 modulesAdapter.Fill(modulesDt);
@@ -287,6 +295,10 @@ namespace PRG282_Group_Project.Data
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd, conn);
                 DataTable dt = new DataTable();
                 dataAdapter.Fill(dt);
+
+                if (dt.Rows.Count <= 0)
+                    throw new ModuleNotFoundException();
+
                 return dt;
             }
         }
@@ -305,7 +317,36 @@ namespace PRG282_Group_Project.Data
             return moduleList;
         }
 
-       
+        public DataTable getModuleResources(string moduleCode)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionPath))
+            {
+                string cmd = $"Select * FROM module_resource where module={moduleCode}";
+                conn.Open();
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd, conn);
+                DataTable dt = new DataTable();
+                dataAdapter.Fill(dt);
+                if (dt.Rows.Count <= 0)
+                    throw new ModuleResourceNotFoundException();
+                return dt;
+            }
+        }
+
+        public List<string> getModuleResourcesList(string moduleCode)
+        {
+            DataTable dt = getModuleResources(moduleCode);
+            List<string> moduleList = new List<string>();
+
+            foreach (DataRow row in dt.Rows)
+            {
+
+                moduleList.Add((string) row["module_code"]);
+            }
+
+            return moduleList;
+        }
+
+
 
     }   
    

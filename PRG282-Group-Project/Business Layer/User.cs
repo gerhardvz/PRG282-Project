@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PRG282_Group_Project.Business_Layer
 {
-    class User
+    public class User
     {
         string _userName;
         string _password;
