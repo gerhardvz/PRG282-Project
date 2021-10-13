@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PRG282_Group_Project
+namespace PRG282_Group_Project.Presentation_Layer
 {
-    public partial class Form1 : Form
+    public partial class Module : Form
     {
-        public Form1()
+        public Module()
         {
             InitializeComponent();
         }
-
     }
 }
