@@ -52,6 +52,8 @@
     <Compile Include="DataTypes\Module.cs" />
     <Compile Include="DataTypes\Student.cs" />
     <Compile Include="DataTypes\User.cs" />
+    <Compile Include="Data\FileHandler.cs" />
+    <Compile Include="Data\HandlerExceptions.cs" />
     <Compile Include="Presentation Layer\Form1.cs">
       <SubType>Form</SubType>
     </Compile>

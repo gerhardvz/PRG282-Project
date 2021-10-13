@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using PRG282_Group_Project.Business_Layer;
+using PRG282_Group_Project.Exeptions;
 
 namespace PRG282_Group_Project.Data
 {
@@ -42,11 +43,11 @@ namespace PRG282_Group_Project.Data
 
                     if (dt.Rows.Count > 0)
                     {
-                        throw new Exception("No students found with id");
+                        throw new StudentNotFoundException(id);
                     }
                     else if (dt.Rows.Count > 1)
                     {
-                        throw new Exception("To many students with same ID.");
+                        throw new DuplicateStudentException(id);
                     }
                     else
                     {
@@ -88,6 +89,8 @@ namespace PRG282_Group_Project.Data
                     SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd, conn);
                     DataTable dt = new DataTable();
                     dataAdapter.Fill(dt);
+                if (dt.Rows.Count == 0)
+                    throw new StudentNotFoundException();
                     return dt;
                 }
 
@@ -299,6 +302,8 @@ namespace PRG282_Group_Project.Data
 
             return moduleList;
         }
+
+        
 
        
 
