@@ -14,6 +14,7 @@ namespace PRG282_Group_Project.Presentation_Layer
     public partial class ModuleView : Form
     {
         Module activeModule;
+        ModuleResource activeModuleResource;
         public ModuleView()
         {
             InitializeComponent();
@@ -22,15 +23,24 @@ namespace PRG282_Group_Project.Presentation_Layer
 
         private void Module_Load(object sender, EventArgs e)
         {
-           
+            LoadModuleList();
+            ClearModuleSelection();
+        }
+
+        private void ClearModuleSelection()
+        {
+            this.lblDescription.Text = "Description";
+            this.lblModuleCode.Text = "Module Code and Name";
+            
+            moduleResourcesList.Items.Clear();
+            activeModule = null;
         }
 
         private void LoadModuleList()
         {
             foreach(Module module in Read_Module.displayModules())
             {
-                ListViewItem item = new ListViewItem(module.Code);
-                item.SubItems.Add(module.Name);
+                ListViewItem item = new ListViewItem(module.ToListViewArray());
 
                 moduleListView.Items.Add(item);
             }
@@ -85,6 +95,27 @@ namespace PRG282_Group_Project.Presentation_Layer
         {
             //search for module by code
            
+        }
+
+        private void moduleListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            activeModule = Read_Module.GetModule(moduleListView.SelectedItems[0].SubItems[0].ToString());
+            lblModuleCode.Text = activeModule.Code;
+            lblDescription.Text = activeModule.Description;
+            //Load ResourceList
+            List<ModuleResource> mr = Read_Module.GetModuleResources(activeModule.Code);
+            foreach(ModuleResource moduleResource in mr)
+            {
+                ListViewItem item = new ListViewItem(moduleResource.ToListViewArray());
+                moduleResourcesList.Items.Add(item);
+            }
+                }
+
+        private void moduleResourcesList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            activeModuleResource = Read_Module.GetModuleResource(activeModule.Code,moduleResourcesList.SelectedItems[0].SubItems[1].ToString()) ;
+           
+
         }
     }
 }

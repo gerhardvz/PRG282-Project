@@ -22,6 +22,11 @@ namespace PRG282_Group_Project.Business_Layer.StudentBLL
             }
            
         }
+        static public List<Student> getStudents()
+        {
+            List<Student> student = dh.getStudentList();
+            return student;
+        }
 
         static  public Student getStudent(string studentNr)
         {

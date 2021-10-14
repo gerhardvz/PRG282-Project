@@ -72,6 +72,19 @@ namespace PRG282_Group_Project.Business_Layer.StudentBLL
             this._modulecodes.Add(moduleCode);
         }
        
+        //Only print student number, name surname and gender
+        public string[] ToListViewArray()
+        {
+            string gender = "";
+            switch (Gender)
+            {
+                case 'M': { gender = "Male"; break; }
+                case 'F': { gender = "Female"; break; }
+                case 'O': { gender = "Other"; break; }
+            }
+            string[] list = new string[4] { StudentNumber.ToString(), Name,Surname,gender };
+            return list;
+        }
 
        
 

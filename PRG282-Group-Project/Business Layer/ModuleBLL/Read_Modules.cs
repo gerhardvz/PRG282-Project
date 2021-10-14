@@ -22,8 +22,14 @@ namespace PRG282_Group_Project.Business_Layer.ModuleBLL
             return dh.getModuleList();
         }
 
-
-
+        public static List<ModuleResource> GetModuleResources(string code)
+        {
+            return dh.getModuleResourcesList(code);
+        }
+        public static ModuleResource GetModuleResource(string code,string url)
+        {
+            return dh.getModuleResource(code,url);
+        }
         public static string validation()
         {
             throw new NotImplementedException();

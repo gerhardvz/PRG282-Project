@@ -54,8 +54,12 @@ namespace PRG282_Group_Project.Business_Layer.ModuleBLL
         {
             return new List<string>() { Code, Name, Description };
         }
+        public string[] ToListViewArray()
+        {
+            return new string[] { Code, Name };
+        }
         //resources
 
-        
+
     }
 }

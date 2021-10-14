@@ -35,9 +35,9 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.lblGender = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.dtDOB = new System.Windows.Forms.DateTimePicker();
+            this.edtPhone = new System.Windows.Forms.TextBox();
+            this.edtAddress = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAddStudent = new System.Windows.Forms.Button();
@@ -46,7 +46,7 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.btn_Update = new System.Windows.Forms.Button();
             this.btn_Log_Out = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.studentModuleList = new System.Windows.Forms.ListView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnRemoveModule = new System.Windows.Forms.Button();
@@ -57,6 +57,10 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.label1 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -126,29 +130,29 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.label7.TabIndex = 6;
             this.label7.Text = "Adress";
             // 
-            // dateTimePicker1
+            // dtDOB
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(124, 12);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(362, 22);
-            this.dateTimePicker1.TabIndex = 9;
+            this.dtDOB.Location = new System.Drawing.Point(124, 12);
+            this.dtDOB.Margin = new System.Windows.Forms.Padding(4);
+            this.dtDOB.Name = "dtDOB";
+            this.dtDOB.Size = new System.Drawing.Size(362, 22);
+            this.dtDOB.TabIndex = 9;
             // 
-            // textBox3
+            // edtPhone
             // 
-            this.textBox3.Location = new System.Drawing.Point(124, 45);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(178, 22);
-            this.textBox3.TabIndex = 10;
+            this.edtPhone.Location = new System.Drawing.Point(124, 45);
+            this.edtPhone.Margin = new System.Windows.Forms.Padding(4);
+            this.edtPhone.Name = "edtPhone";
+            this.edtPhone.Size = new System.Drawing.Size(178, 22);
+            this.edtPhone.TabIndex = 10;
             // 
-            // textBox4
+            // edtAddress
             // 
-            this.textBox4.Location = new System.Drawing.Point(124, 84);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(362, 22);
-            this.textBox4.TabIndex = 11;
+            this.edtAddress.Location = new System.Drawing.Point(124, 84);
+            this.edtAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.edtAddress.Name = "edtAddress";
+            this.edtAddress.Size = new System.Drawing.Size(362, 22);
+            this.edtAddress.TabIndex = 11;
             // 
             // pictureBox1
             // 
@@ -229,26 +233,26 @@ namespace PRG282_Group_Project.Presentation_Layer
             // panel2
             // 
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.dtDOB);
             this.panel2.Controls.Add(this.btn_Update);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.edtPhone);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.textBox4);
+            this.panel2.Controls.Add(this.edtAddress);
             this.panel2.Location = new System.Drawing.Point(30, 300);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(516, 171);
             this.panel2.TabIndex = 19;
             // 
-            // listView1
+            // studentModuleList
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(16, 21);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(142, 229);
-            this.listView1.TabIndex = 20;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.List;
+            this.studentModuleList.HideSelection = false;
+            this.studentModuleList.Location = new System.Drawing.Point(16, 21);
+            this.studentModuleList.Name = "studentModuleList";
+            this.studentModuleList.Size = new System.Drawing.Size(142, 229);
+            this.studentModuleList.TabIndex = 20;
+            this.studentModuleList.UseCompatibleStateImageBehavior = false;
+            this.studentModuleList.View = System.Windows.Forms.View.List;
             // 
             // groupBox1
             // 
@@ -269,7 +273,7 @@ namespace PRG282_Group_Project.Presentation_Layer
             // 
             this.groupBox2.Controls.Add(this.btnRemoveModule);
             this.groupBox2.Controls.Add(this.btnAddModule);
-            this.groupBox2.Controls.Add(this.listView1);
+            this.groupBox2.Controls.Add(this.studentModuleList);
             this.groupBox2.Location = new System.Drawing.Point(275, 22);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(271, 261);
@@ -299,6 +303,11 @@ namespace PRG282_Group_Project.Presentation_Layer
             // 
             // studentListView
             // 
+            this.studentListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
             this.studentListView.HideSelection = false;
             this.studentListView.Location = new System.Drawing.Point(40, 37);
             this.studentListView.MultiSelect = false;
@@ -359,6 +368,25 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 23;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Student Number";
+            this.columnHeader1.Width = 119;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Name";
+            this.columnHeader2.Width = 85;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Surname";
+            this.columnHeader3.Width = 99;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Gender";
+            // 
             // frmStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -392,9 +420,9 @@ namespace PRG282_Group_Project.Presentation_Layer
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.DateTimePicker dtDOB;
+        private System.Windows.Forms.TextBox edtPhone;
+        private System.Windows.Forms.TextBox edtAddress;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnRefresh;
@@ -402,7 +430,7 @@ namespace PRG282_Group_Project.Presentation_Layer
         private System.Windows.Forms.Button btn_Update;
         private System.Windows.Forms.Button btn_Log_Out;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView studentModuleList;
         private System.Windows.Forms.Button btnAddStudent;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -414,5 +442,9 @@ namespace PRG282_Group_Project.Presentation_Layer
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

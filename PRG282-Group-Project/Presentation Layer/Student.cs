@@ -17,11 +17,33 @@ namespace PRG282_Group_Project.Presentation_Layer
         public frmStudent()
         {
             InitializeComponent();
+            ClearStudentSelection();
+            loadStudents();
             //Show student list but only display student number, name surname and dob
         }
        
-
+        private void ClearStudentSelection()
+        {
+            lblStudentNumber.Text = "Student Number";
+            lblName.Text = "Student Full Name";
+            lblGender.Text = "Gender";
+            dtDOB.Value = DateTime.Today;
+            edtAddress.Text = "";
+            edtPhone.Text = "";
+            studentModuleList.Items.Clear();
+            activeStudent = null;
+        }
     
+        private void loadStudents()
+        {
+            List<Student> studentList = Read_Student.getStudents();
+            foreach(Student s in studentList)
+            {
+                ListViewItem item = new ListViewItem(s.ToListViewArray());
+                studentListView.Items.Add(item);
+            }
+
+        }
 
         private void btnAddModule_Click(object sender, EventArgs e)
         {

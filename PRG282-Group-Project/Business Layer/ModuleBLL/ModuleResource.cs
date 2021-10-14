@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PRG282_Group_Project.Business_Layer
+namespace PRG282_Group_Project.Business_Layer.ModuleBLL
 {
     public class ModuleResource
     {
@@ -25,6 +25,10 @@ namespace PRG282_Group_Project.Business_Layer
         public ModuleResource()
         {
 
+        }
+        public string[] ToListViewArray()
+        {
+            return new string[] {Name,URL };
         }
     }
 }

@@ -30,6 +30,7 @@ namespace PRG282_Group_Project.Presentation_Layer
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnResourceAdd = new System.Windows.Forms.Button();
             this.btnResourceRefresh = new System.Windows.Forms.Button();
@@ -50,7 +51,8 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.btnModuleAdd = new System.Windows.Forms.Button();
             this.btnModuleRefresh = new System.Windows.Forms.Button();
             this.btnModuleDelete = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -72,6 +74,15 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Class Modules";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(32, 141);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 17);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Resources";
             // 
             // panel2
             // 
@@ -119,6 +130,9 @@ namespace PRG282_Group_Project.Presentation_Layer
             // 
             // moduleResourcesList
             // 
+            this.moduleResourcesList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3,
+            this.columnHeader4});
             this.moduleResourcesList.HideSelection = false;
             this.moduleResourcesList.Location = new System.Drawing.Point(35, 161);
             this.moduleResourcesList.Name = "moduleResourcesList";
@@ -126,6 +140,7 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.moduleResourcesList.TabIndex = 3;
             this.moduleResourcesList.UseCompatibleStateImageBehavior = false;
             this.moduleResourcesList.View = System.Windows.Forms.View.Details;
+            this.moduleResourcesList.SelectedIndexChanged += new System.EventHandler(this.moduleResourcesList_SelectedIndexChanged);
             // 
             // btnChangeDesc
             // 
@@ -219,6 +234,7 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.moduleListView.TabIndex = 22;
             this.moduleListView.UseCompatibleStateImageBehavior = false;
             this.moduleListView.View = System.Windows.Forms.View.Details;
+            this.moduleListView.SelectedIndexChanged += new System.EventHandler(this.moduleListView_SelectedIndexChanged);
             this.moduleListView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.moduleListView_MouseClick);
             // 
             // columnHeader1
@@ -273,14 +289,13 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.btnModuleDelete.UseVisualStyleBackColor = true;
             this.btnModuleDelete.Click += new System.EventHandler(this.btnModuleDelete_Click);
             // 
-            // label2
+            // columnHeader3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 141);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 17);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Resources";
+            this.columnHeader3.Text = "Name";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "URL";
             // 
             // ModuleView
             // 
@@ -327,5 +342,7 @@ namespace PRG282_Group_Project.Presentation_Layer
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

@@ -401,6 +401,24 @@ namespace PRG282_Group_Project.Data
             }
         }
 
+        public ModuleResource getModuleResource(string moduleCode,string url)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionPath))
+            {
+                string cmd = $"Select * FROM module_resource where module={moduleCode} and url={url}";
+                conn.Open();
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd, conn);
+                DataTable dt = new DataTable();
+                dataAdapter.Fill(dt);
+                if (dt.Rows.Count != 1)
+                    throw new ModuleException("Duplicate Module Resource");
+                DataRow row = dt.Rows[0];
+                ModuleResource mr = new ModuleResource((string)row["module_code"], (string)row["name"], (string)row["url"]);
+
+                return mr;
+            }
+        }
+
         public List<ModuleResource> getModuleResourcesList(string moduleCode)
         {
             DataTable dt = getModuleResources(moduleCode);
