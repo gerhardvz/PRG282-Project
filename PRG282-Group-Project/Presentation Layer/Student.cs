@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PRG282_Group_Project.Business_Layer.StudentBLL;
 
-namespace PRG282_Group_Project
+namespace PRG282_Group_Project.Presentation_Layer
 {
     public partial class frmStudent : Form
     {
@@ -30,11 +30,20 @@ namespace PRG282_Group_Project
 
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
+            string result;
             //Show NewStudent Form and save 
-            Student  student = new Student();
-            string result = Insert_Student.Insert(student);
-            //Display popup if student Add was successfull or not
-            
+            frmNewStudent newStudentForm = new frmNewStudent();
+            DialogResult dr = newStudentForm.ShowDialog();
+            if (newStudentForm.isSaved())
+            {
+                Student student = newStudentForm.GetNewStudent();
+                 result = Insert_Student.Insert(student);
+                //Display popup if student Add was successfull or not
+            }
+
+            //Display popup student creation canceled
+
+
         }
 
         private void btn_Update_Click(object sender, EventArgs e)

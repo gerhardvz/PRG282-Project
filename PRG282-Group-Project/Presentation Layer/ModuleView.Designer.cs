@@ -42,14 +42,15 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.edtModuleSearch = new System.Windows.Forms.TextBox();
             this.moduleListView = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnModuleAdd = new System.Windows.Forms.Button();
             this.btnModuleRefresh = new System.Windows.Forms.Button();
             this.btnModuleDelete = new System.Windows.Forms.Button();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -59,6 +60,7 @@ namespace PRG282_Group_Project.Presentation_Layer
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Controls.Add(this.moduleResourcesList);
             this.groupBox1.Controls.Add(this.btnChangeDesc);
@@ -90,6 +92,7 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.btnResourceAdd.TabIndex = 3;
             this.btnResourceAdd.Text = "Add";
             this.btnResourceAdd.UseVisualStyleBackColor = true;
+            this.btnResourceAdd.Click += new System.EventHandler(this.btnResourceAdd_Click);
             // 
             // btnResourceRefresh
             // 
@@ -101,6 +104,7 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.btnResourceRefresh.TabIndex = 2;
             this.btnResourceRefresh.Text = "Refresh";
             this.btnResourceRefresh.UseVisualStyleBackColor = true;
+            this.btnResourceRefresh.Click += new System.EventHandler(this.btnResourceRefresh_Click);
             // 
             // btnResourceDelete
             // 
@@ -111,6 +115,7 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.btnResourceDelete.TabIndex = 1;
             this.btnResourceDelete.Text = "Delete";
             this.btnResourceDelete.UseVisualStyleBackColor = true;
+            this.btnResourceDelete.Click += new System.EventHandler(this.btnResourceDelete_Click);
             // 
             // moduleResourcesList
             // 
@@ -130,6 +135,7 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.btnChangeDesc.TabIndex = 2;
             this.btnChangeDesc.Text = "Change Description";
             this.btnChangeDesc.UseVisualStyleBackColor = true;
+            this.btnChangeDesc.Click += new System.EventHandler(this.btnChangeDesc_Click);
             // 
             // lblDescription
             // 
@@ -165,7 +171,7 @@ namespace PRG282_Group_Project.Presentation_Layer
             // 
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Controls.Add(this.btnSearch);
-            this.groupBox4.Controls.Add(this.textBox1);
+            this.groupBox4.Controls.Add(this.edtModuleSearch);
             this.groupBox4.Location = new System.Drawing.Point(429, 37);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(131, 100);
@@ -190,13 +196,14 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.btnSearch.TabIndex = 25;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // textBox1
+            // edtModuleSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(9, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 23;
+            this.edtModuleSearch.Location = new System.Drawing.Point(9, 38);
+            this.edtModuleSearch.Name = "edtModuleSearch";
+            this.edtModuleSearch.Size = new System.Drawing.Size(100, 22);
+            this.edtModuleSearch.TabIndex = 23;
             // 
             // moduleListView
             // 
@@ -213,6 +220,14 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.moduleListView.UseCompatibleStateImageBehavior = false;
             this.moduleListView.View = System.Windows.Forms.View.Details;
             this.moduleListView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.moduleListView_MouseClick);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Code";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Name";
             // 
             // panel1
             // 
@@ -233,6 +248,7 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.btnModuleAdd.TabIndex = 3;
             this.btnModuleAdd.Text = "Add";
             this.btnModuleAdd.UseVisualStyleBackColor = true;
+            this.btnModuleAdd.Click += new System.EventHandler(this.btnModuleAdd_Click);
             // 
             // btnModuleRefresh
             // 
@@ -244,6 +260,7 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.btnModuleRefresh.TabIndex = 2;
             this.btnModuleRefresh.Text = "Refresh";
             this.btnModuleRefresh.UseVisualStyleBackColor = true;
+            this.btnModuleRefresh.Click += new System.EventHandler(this.btnModuleRefresh_Click);
             // 
             // btnModuleDelete
             // 
@@ -254,14 +271,16 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.btnModuleDelete.TabIndex = 1;
             this.btnModuleDelete.Text = "Delete";
             this.btnModuleDelete.UseVisualStyleBackColor = true;
+            this.btnModuleDelete.Click += new System.EventHandler(this.btnModuleDelete_Click);
             // 
-            // columnHeader1
+            // label2
             // 
-            this.columnHeader1.Text = "Code";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Name";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(32, 141);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 17);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Resources";
             // 
             // ModuleView
             // 
@@ -299,7 +318,7 @@ namespace PRG282_Group_Project.Presentation_Layer
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox edtModuleSearch;
         private System.Windows.Forms.ListView moduleListView;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnModuleAdd;
@@ -307,5 +326,6 @@ namespace PRG282_Group_Project.Presentation_Layer
         private System.Windows.Forms.Button btnModuleDelete;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.Label label2;
     }
 }

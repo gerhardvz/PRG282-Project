@@ -13,7 +13,7 @@ namespace PRG282_Group_Project.Presentation_Layer
 {
     public partial class ModuleView : Form
     {
-        Module SelectedModule;
+        Module activeModule;
         public ModuleView()
         {
             InitializeComponent();
@@ -39,9 +39,51 @@ namespace PRG282_Group_Project.Presentation_Layer
 
         private void moduleListView_MouseClick(object sender, MouseEventArgs e)
         {
-            SelectedModule = Read_Module.GetModule(moduleListView.SelectedItems[0].SubItems[0].Text);
-            lblModuleCode.Text = $"{SelectedModule.Code} - {SelectedModule.Name}";
-            lblDescription.Text = SelectedModule.Description;
+            activeModule = Read_Module.GetModule(moduleListView.SelectedItems[0].SubItems[0].Text);
+            lblModuleCode.Text = $"{activeModule.Code} - {activeModule.Name}";
+            lblDescription.Text = activeModule.Description;
+           
+        }
+
+        private void btnChangeDesc_Click(object sender, EventArgs e)
+        {
+            //Display popup message asking for description change. save to activeModule
+        }
+
+        private void btnResourceAdd_Click(object sender, EventArgs e)
+        {
+            //add new resource to Module
+        }
+
+        private void btnResourceRefresh_Click(object sender, EventArgs e)
+        {
+            //load resources from module
+        }
+
+        private void btnResourceDelete_Click(object sender, EventArgs e)
+        {
+            //remove selected resource for module
+        }
+
+        private void btnModuleAdd_Click(object sender, EventArgs e)
+        {
+            //add new module
+        }
+
+        private void btnModuleRefresh_Click(object sender, EventArgs e)
+        {
+           
+            LoadModuleList();
+        }
+
+        private void btnModuleDelete_Click(object sender, EventArgs e)
+        {
+            //delete selected module
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            //search for module by code
            
         }
     }

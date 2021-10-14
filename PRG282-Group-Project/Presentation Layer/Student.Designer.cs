@@ -1,5 +1,5 @@
 ﻿
-namespace PRG282_Group_Project
+namespace PRG282_Group_Project.Presentation_Layer
 {
     partial class frmStudent
     {

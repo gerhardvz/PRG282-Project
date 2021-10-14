@@ -29,12 +29,12 @@ namespace PRG282_Group_Project.Presentation_Layer
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_Female = new System.Windows.Forms.RadioButton();
-            this.btn_Male = new System.Windows.Forms.RadioButton();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.rbFemale = new System.Windows.Forms.RadioButton();
+            this.rbMale = new System.Windows.Forms.RadioButton();
+            this.edtAddress = new System.Windows.Forms.TextBox();
+            this.edtPhone = new System.Windows.Forms.TextBox();
+            this.dtDOB = new System.Windows.Forms.DateTimePicker();
+            this.edtName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,64 +42,72 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.label2 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.edtSurname = new System.Windows.Forms.TextBox();
+            this.rbOther = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btn_Female
+            // rbFemale
             // 
-            this.btn_Female.AutoSize = true;
-            this.btn_Female.Location = new System.Drawing.Point(384, 113);
-            this.btn_Female.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btn_Female.Name = "btn_Female";
-            this.btn_Female.Size = new System.Drawing.Size(75, 21);
-            this.btn_Female.TabIndex = 32;
-            this.btn_Female.TabStop = true;
-            this.btn_Female.Text = "Female";
-            this.btn_Female.UseVisualStyleBackColor = true;
+            this.rbFemale.AutoSize = true;
+            this.rbFemale.Location = new System.Drawing.Point(237, 114);
+            this.rbFemale.Margin = new System.Windows.Forms.Padding(4);
+            this.rbFemale.Name = "rbFemale";
+            this.rbFemale.Size = new System.Drawing.Size(75, 21);
+            this.rbFemale.TabIndex = 32;
+            this.rbFemale.TabStop = true;
+            this.rbFemale.Text = "Female";
+            this.rbFemale.UseVisualStyleBackColor = true;
+            this.rbFemale.CheckedChanged += new System.EventHandler(this.rbFemale_CheckedChanged);
             // 
-            // btn_Male
+            // rbMale
             // 
-            this.btn_Male.AutoSize = true;
-            this.btn_Male.Location = new System.Drawing.Point(263, 113);
-            this.btn_Male.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btn_Male.Name = "btn_Male";
-            this.btn_Male.Size = new System.Drawing.Size(59, 21);
-            this.btn_Male.TabIndex = 31;
-            this.btn_Male.TabStop = true;
-            this.btn_Male.Text = "Male";
-            this.btn_Male.UseVisualStyleBackColor = true;
+            this.rbMale.AutoSize = true;
+            this.rbMale.Location = new System.Drawing.Point(170, 114);
+            this.rbMale.Margin = new System.Windows.Forms.Padding(4);
+            this.rbMale.Name = "rbMale";
+            this.rbMale.Size = new System.Drawing.Size(59, 21);
+            this.rbMale.TabIndex = 31;
+            this.rbMale.TabStop = true;
+            this.rbMale.Text = "Male";
+            this.rbMale.UseVisualStyleBackColor = true;
+            this.rbMale.CheckedChanged += new System.EventHandler(this.rbMale_CheckedChanged);
             // 
-            // textBox4
+            // edtAddress
             // 
-            this.textBox4.Location = new System.Drawing.Point(263, 170);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(289, 22);
-            this.textBox4.TabIndex = 29;
+            this.edtAddress.Location = new System.Drawing.Point(170, 171);
+            this.edtAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.edtAddress.Name = "edtAddress";
+            this.edtAddress.Size = new System.Drawing.Size(289, 22);
+            this.edtAddress.TabIndex = 29;
+            this.edtAddress.TextChanged += new System.EventHandler(this.edtAddress_TextChanged);
             // 
-            // textBox3
+            // edtPhone
             // 
-            this.textBox3.Location = new System.Drawing.Point(263, 139);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(289, 22);
-            this.textBox3.TabIndex = 28;
+            this.edtPhone.Location = new System.Drawing.Point(170, 140);
+            this.edtPhone.Margin = new System.Windows.Forms.Padding(4);
+            this.edtPhone.Name = "edtPhone";
+            this.edtPhone.Size = new System.Drawing.Size(289, 22);
+            this.edtPhone.TabIndex = 28;
+            this.edtPhone.TextChanged += new System.EventHandler(this.edtPhone_TextChanged);
             // 
-            // dateTimePicker1
+            // dtDOB
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(263, 86);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(265, 22);
-            this.dateTimePicker1.TabIndex = 27;
+            this.dtDOB.Location = new System.Drawing.Point(170, 87);
+            this.dtDOB.Margin = new System.Windows.Forms.Padding(4);
+            this.dtDOB.Name = "dtDOB";
+            this.dtDOB.Size = new System.Drawing.Size(265, 22);
+            this.dtDOB.TabIndex = 27;
+            this.dtDOB.ValueChanged += new System.EventHandler(this.dtDOB_ValueChanged);
             // 
-            // textBox2
+            // edtName
             // 
-            this.textBox2.Location = new System.Drawing.Point(263, 54);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(132, 22);
-            this.textBox2.TabIndex = 26;
+            this.edtName.Location = new System.Drawing.Point(170, 55);
+            this.edtName.Margin = new System.Windows.Forms.Padding(4);
+            this.edtName.Name = "edtName";
+            this.edtName.Size = new System.Drawing.Size(132, 22);
+            this.edtName.TabIndex = 26;
+            this.edtName.TextChanged += new System.EventHandler(this.edtName_TextChanged);
             // 
             // label7
             // 
@@ -107,9 +115,9 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.label7.Location = new System.Drawing.Point(44, 170);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 17);
+            this.label7.Size = new System.Drawing.Size(60, 17);
             this.label7.TabIndex = 24;
-            this.label7.Text = "Adress";
+            this.label7.Text = "Address";
             // 
             // label5
             // 
@@ -147,9 +155,9 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.label2.Location = new System.Drawing.Point(44, 58);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(183, 17);
+            this.label2.Size = new System.Drawing.Size(96, 17);
             this.label2.TabIndex = 19;
-            this.label2.Text = "Student name and surname";
+            this.label2.Text = "Student name";
             // 
             // btnCancel
             // 
@@ -160,6 +168,7 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.btnCancel.TabIndex = 35;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -169,14 +178,39 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.btnSave.TabIndex = 36;
             this.btnSave.Text = "Save Student";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // textBox1
+            // edtSurname
             // 
-            this.textBox1.Location = new System.Drawing.Point(420, 55);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 22);
-            this.textBox1.TabIndex = 37;
+            this.edtSurname.Location = new System.Drawing.Point(402, 55);
+            this.edtSurname.Margin = new System.Windows.Forms.Padding(4);
+            this.edtSurname.Name = "edtSurname";
+            this.edtSurname.Size = new System.Drawing.Size(132, 22);
+            this.edtSurname.TabIndex = 37;
+            this.edtSurname.TextChanged += new System.EventHandler(this.edtSurname_TextChanged);
+            // 
+            // rbOther
+            // 
+            this.rbOther.AutoSize = true;
+            this.rbOther.Location = new System.Drawing.Point(320, 114);
+            this.rbOther.Margin = new System.Windows.Forms.Padding(4);
+            this.rbOther.Name = "rbOther";
+            this.rbOther.Size = new System.Drawing.Size(65, 21);
+            this.rbOther.TabIndex = 38;
+            this.rbOther.TabStop = true;
+            this.rbOther.Text = "Other";
+            this.rbOther.UseVisualStyleBackColor = true;
+            this.rbOther.CheckedChanged += new System.EventHandler(this.rbOther_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(329, 58);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 17);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "Surname";
             // 
             // frmNewStudent
             // 
@@ -185,22 +219,24 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(656, 268);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.rbOther);
+            this.Controls.Add(this.edtSurname);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btn_Female);
-            this.Controls.Add(this.btn_Male);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.rbFemale);
+            this.Controls.Add(this.rbMale);
+            this.Controls.Add(this.edtAddress);
+            this.Controls.Add(this.edtPhone);
+            this.Controls.Add(this.dtDOB);
+            this.Controls.Add(this.edtName);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmNewStudent";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -214,12 +250,12 @@ namespace PRG282_Group_Project.Presentation_Layer
 
         #endregion
 
-        private System.Windows.Forms.RadioButton btn_Female;
-        private System.Windows.Forms.RadioButton btn_Male;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.RadioButton rbFemale;
+        private System.Windows.Forms.RadioButton rbMale;
+        private System.Windows.Forms.TextBox edtAddress;
+        private System.Windows.Forms.TextBox edtPhone;
+        private System.Windows.Forms.DateTimePicker dtDOB;
+        private System.Windows.Forms.TextBox edtName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -227,6 +263,8 @@ namespace PRG282_Group_Project.Presentation_Layer
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox edtSurname;
+        private System.Windows.Forms.RadioButton rbOther;
+        private System.Windows.Forms.Label label1;
     }
 }
