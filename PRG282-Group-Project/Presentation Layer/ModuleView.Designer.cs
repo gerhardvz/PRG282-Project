@@ -1,7 +1,7 @@
 ﻿
 namespace PRG282_Group_Project.Presentation_Layer
 {
-    partial class Module
+    partial class ModuleView
     {
         /// <summary>
         /// Required designer variable.
@@ -30,29 +30,31 @@ namespace PRG282_Group_Project.Presentation_Layer
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblModuleCode = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnChangeDesc = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnResourceAdd = new System.Windows.Forms.Button();
+            this.btnResourceRefresh = new System.Windows.Forms.Button();
+            this.btnResourceDelete = new System.Windows.Forms.Button();
             this.moduleResourcesList = new System.Windows.Forms.ListView();
+            this.btnChangeDesc = new System.Windows.Forms.Button();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.lblModuleCode = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.studentListView = new System.Windows.Forms.ListView();
+            this.moduleListView = new System.Windows.Forms.ListView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnModuleAdd = new System.Windows.Forms.Button();
             this.btnModuleRefresh = new System.Windows.Forms.Button();
             this.btnModuleDelete = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnResourceAdd = new System.Windows.Forms.Button();
-            this.btnResourceRefresh = new System.Windows.Forms.Button();
-            this.btnResourceDelete = new System.Windows.Forms.Button();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -60,7 +62,7 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Controls.Add(this.moduleResourcesList);
             this.groupBox1.Controls.Add(this.btnChangeDesc);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lblDescription);
             this.groupBox1.Controls.Add(this.lblModuleCode);
             this.groupBox1.Location = new System.Drawing.Point(31, 24);
             this.groupBox1.Name = "groupBox1";
@@ -69,32 +71,46 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Class Modules";
             // 
-            // lblModuleCode
+            // panel2
             // 
-            this.lblModuleCode.AutoSize = true;
-            this.lblModuleCode.Location = new System.Drawing.Point(32, 36);
-            this.lblModuleCode.Name = "lblModuleCode";
-            this.lblModuleCode.Size = new System.Drawing.Size(160, 17);
-            this.lblModuleCode.TabIndex = 0;
-            this.lblModuleCode.Text = "Module Code and Name";
+            this.panel2.Controls.Add(this.btnResourceAdd);
+            this.panel2.Controls.Add(this.btnResourceRefresh);
+            this.panel2.Controls.Add(this.btnResourceDelete);
+            this.panel2.Location = new System.Drawing.Point(52, 409);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(356, 51);
+            this.panel2.TabIndex = 19;
             // 
-            // label2
+            // btnResourceAdd
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Description";
+            this.btnResourceAdd.Location = new System.Drawing.Point(12, 11);
+            this.btnResourceAdd.Name = "btnResourceAdd";
+            this.btnResourceAdd.Size = new System.Drawing.Size(88, 28);
+            this.btnResourceAdd.TabIndex = 3;
+            this.btnResourceAdd.Text = "Add";
+            this.btnResourceAdd.UseVisualStyleBackColor = true;
             // 
-            // btnChangeDesc
+            // btnResourceRefresh
             // 
-            this.btnChangeDesc.Location = new System.Drawing.Point(346, 80);
-            this.btnChangeDesc.Name = "btnChangeDesc";
-            this.btnChangeDesc.Size = new System.Drawing.Size(75, 23);
-            this.btnChangeDesc.TabIndex = 2;
-            this.btnChangeDesc.Text = "Change Description";
-            this.btnChangeDesc.UseVisualStyleBackColor = true;
+            this.btnResourceRefresh.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.btnResourceRefresh.Location = new System.Drawing.Point(119, 11);
+            this.btnResourceRefresh.Margin = new System.Windows.Forms.Padding(4);
+            this.btnResourceRefresh.Name = "btnResourceRefresh";
+            this.btnResourceRefresh.Size = new System.Drawing.Size(100, 28);
+            this.btnResourceRefresh.TabIndex = 2;
+            this.btnResourceRefresh.Text = "Refresh";
+            this.btnResourceRefresh.UseVisualStyleBackColor = true;
+            // 
+            // btnResourceDelete
+            // 
+            this.btnResourceDelete.Location = new System.Drawing.Point(241, 11);
+            this.btnResourceDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.btnResourceDelete.Name = "btnResourceDelete";
+            this.btnResourceDelete.Size = new System.Drawing.Size(100, 28);
+            this.btnResourceDelete.TabIndex = 1;
+            this.btnResourceDelete.Text = "Delete";
+            this.btnResourceDelete.UseVisualStyleBackColor = true;
             // 
             // moduleResourcesList
             // 
@@ -106,10 +122,37 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.moduleResourcesList.UseCompatibleStateImageBehavior = false;
             this.moduleResourcesList.View = System.Windows.Forms.View.Details;
             // 
+            // btnChangeDesc
+            // 
+            this.btnChangeDesc.Location = new System.Drawing.Point(346, 80);
+            this.btnChangeDesc.Name = "btnChangeDesc";
+            this.btnChangeDesc.Size = new System.Drawing.Size(75, 23);
+            this.btnChangeDesc.TabIndex = 2;
+            this.btnChangeDesc.Text = "Change Description";
+            this.btnChangeDesc.UseVisualStyleBackColor = true;
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Location = new System.Drawing.Point(32, 83);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(79, 17);
+            this.lblDescription.TabIndex = 1;
+            this.lblDescription.Text = "Description";
+            // 
+            // lblModuleCode
+            // 
+            this.lblModuleCode.AutoSize = true;
+            this.lblModuleCode.Location = new System.Drawing.Point(32, 36);
+            this.lblModuleCode.Name = "lblModuleCode";
+            this.lblModuleCode.Size = new System.Drawing.Size(160, 17);
+            this.lblModuleCode.TabIndex = 0;
+            this.lblModuleCode.Text = "Module Code and Name";
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.groupBox4);
-            this.groupBox3.Controls.Add(this.studentListView);
+            this.groupBox3.Controls.Add(this.moduleListView);
             this.groupBox3.Controls.Add(this.panel1);
             this.groupBox3.Location = new System.Drawing.Point(579, 25);
             this.groupBox3.Name = "groupBox3";
@@ -155,16 +198,21 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 23;
             // 
-            // studentListView
+            // moduleListView
             // 
-            this.studentListView.HideSelection = false;
-            this.studentListView.Location = new System.Drawing.Point(40, 37);
-            this.studentListView.MultiSelect = false;
-            this.studentListView.Name = "studentListView";
-            this.studentListView.Size = new System.Drawing.Size(356, 364);
-            this.studentListView.TabIndex = 22;
-            this.studentListView.UseCompatibleStateImageBehavior = false;
-            this.studentListView.View = System.Windows.Forms.View.Details;
+            this.moduleListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.moduleListView.FullRowSelect = true;
+            this.moduleListView.HideSelection = false;
+            this.moduleListView.Location = new System.Drawing.Point(40, 37);
+            this.moduleListView.MultiSelect = false;
+            this.moduleListView.Name = "moduleListView";
+            this.moduleListView.Size = new System.Drawing.Size(356, 364);
+            this.moduleListView.TabIndex = 22;
+            this.moduleListView.UseCompatibleStateImageBehavior = false;
+            this.moduleListView.View = System.Windows.Forms.View.Details;
+            this.moduleListView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.moduleListView_MouseClick);
             // 
             // panel1
             // 
@@ -207,63 +255,31 @@ namespace PRG282_Group_Project.Presentation_Layer
             this.btnModuleDelete.Text = "Delete";
             this.btnModuleDelete.UseVisualStyleBackColor = true;
             // 
-            // panel2
+            // columnHeader1
             // 
-            this.panel2.Controls.Add(this.btnResourceAdd);
-            this.panel2.Controls.Add(this.btnResourceRefresh);
-            this.panel2.Controls.Add(this.btnResourceDelete);
-            this.panel2.Location = new System.Drawing.Point(52, 409);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(356, 51);
-            this.panel2.TabIndex = 19;
+            this.columnHeader1.Text = "Code";
             // 
-            // btnResourceAdd
+            // columnHeader2
             // 
-            this.btnResourceAdd.Location = new System.Drawing.Point(12, 11);
-            this.btnResourceAdd.Name = "btnResourceAdd";
-            this.btnResourceAdd.Size = new System.Drawing.Size(88, 28);
-            this.btnResourceAdd.TabIndex = 3;
-            this.btnResourceAdd.Text = "Add";
-            this.btnResourceAdd.UseVisualStyleBackColor = true;
+            this.columnHeader2.Text = "Name";
             // 
-            // btnResourceRefresh
-            // 
-            this.btnResourceRefresh.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.btnResourceRefresh.Location = new System.Drawing.Point(119, 11);
-            this.btnResourceRefresh.Margin = new System.Windows.Forms.Padding(4);
-            this.btnResourceRefresh.Name = "btnResourceRefresh";
-            this.btnResourceRefresh.Size = new System.Drawing.Size(100, 28);
-            this.btnResourceRefresh.TabIndex = 2;
-            this.btnResourceRefresh.Text = "Refresh";
-            this.btnResourceRefresh.UseVisualStyleBackColor = true;
-            // 
-            // btnResourceDelete
-            // 
-            this.btnResourceDelete.Location = new System.Drawing.Point(241, 11);
-            this.btnResourceDelete.Margin = new System.Windows.Forms.Padding(4);
-            this.btnResourceDelete.Name = "btnResourceDelete";
-            this.btnResourceDelete.Size = new System.Drawing.Size(100, 28);
-            this.btnResourceDelete.TabIndex = 1;
-            this.btnResourceDelete.Text = "Delete";
-            this.btnResourceDelete.UseVisualStyleBackColor = true;
-            // 
-            // Module
+            // ModuleView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1269, 508);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Module";
+            this.Name = "ModuleView";
             this.Text = "Module";
+            this.Load += new System.EventHandler(this.Module_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -273,7 +289,7 @@ namespace PRG282_Group_Project.Presentation_Layer
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListView moduleResourcesList;
         private System.Windows.Forms.Button btnChangeDesc;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Label lblModuleCode;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnResourceAdd;
@@ -284,10 +300,12 @@ namespace PRG282_Group_Project.Presentation_Layer
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListView studentListView;
+        private System.Windows.Forms.ListView moduleListView;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnModuleAdd;
         private System.Windows.Forms.Button btnModuleRefresh;
         private System.Windows.Forms.Button btnModuleDelete;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }

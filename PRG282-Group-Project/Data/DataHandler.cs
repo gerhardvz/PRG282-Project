@@ -9,7 +9,9 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using PRG282_Group_Project.Business_Layer;
-
+using PRG282_Group_Project.Business_Layer.ModuleBLL;
+using PRG282_Group_Project.Business_Layer.StudentBLL;
+using PRG282_Group_Project.Business_Layer.UserBLL;
 using PRG282_Group_Project.Exeptions;
 
 
@@ -87,8 +89,10 @@ namespace PRG282_Group_Project.Data
 
         public void delStudent(Student student)
         {
+            delStudentModule(student);
             using (SqlConnection conn = new SqlConnection(connectionPath))
             {
+                
                 string cmd = $"delete  FROM student where id={student.StudentNumber}";
                 conn.Open();
                 SqlCommand sqlCommand = new SqlCommand(cmd,conn);
@@ -283,6 +287,25 @@ namespace PRG282_Group_Project.Data
             }
         }
 
+        public Module GetModule(string code)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionPath))
+            {
+                string cmd = $"Select * FROM class_module where code={code}";
+                conn.Open();
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd, conn);
+                DataTable dt = new DataTable();
+                dataAdapter.Fill(dt);
+
+                if (dt.Rows.Count != 1)
+                    throw new ModuleException("Duplicate Module Found");
+                DataRow dr = dt.Rows[0];
+                Module module = new Module((string)dr["code"], (string)dr["name"], (string)dr["description"]);
+                module.Resources = getModuleResourcesList(module.Code);
+                return module;
+            }
+
+        }
         public void updateDescription(Module module)
         {
             using (SqlConnection connection = new SqlConnection(connectionPath))
@@ -343,15 +366,15 @@ namespace PRG282_Group_Project.Data
             }
         }
 
-        public List<string> getModuleResourcesList(string moduleCode)
+        public List<ModuleResource> getModuleResourcesList(string moduleCode)
         {
             DataTable dt = getModuleResources(moduleCode);
-            List<string> moduleList = new List<string>();
+            List<ModuleResource> moduleList = new List<ModuleResource>();
 
             foreach (DataRow row in dt.Rows)
             {
-
-                moduleList.Add((string) row["module_code"]);
+                ModuleResource mr = new ModuleResource((string)row["module_code"], (string)row["name"], (string) row["url"]);
+                moduleList.Add(mr);
             }
 
             return moduleList;

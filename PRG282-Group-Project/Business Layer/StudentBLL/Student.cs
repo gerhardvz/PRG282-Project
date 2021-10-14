@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace PRG282_Group_Project.Business_Layer
+namespace PRG282_Group_Project.Business_Layer.StudentBLL
 {
     public class Student
     {
@@ -28,6 +28,13 @@ namespace PRG282_Group_Project.Business_Layer
         public string Phone { get => _phone; set => _phone = value; }
         public string Address { get => _address; set => _address = value; }
         public List<string> ModuleCodes { get => _modulecodes; set => _modulecodes = value; }
+
+        //Used when searching for users
+        public Student()
+        {
+         
+
+        }
 
         //Gerhard van Zyl : Bare Minimum constructor for Student
         public Student(string name, string surname, DateTime dob, char gender)

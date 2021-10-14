@@ -16,15 +16,15 @@ namespace PRG282_Group_Project.Business_Layer
         public string URL { get => _url; set => _url = value; }
         public string ModuleCode { get => _module_code; set => _module_code = value; }
 
-        public ModuleResource(string moduleCode, string name,string url)
+        public ModuleResource(string moduleCode, string name, string url)
         {
-            this._name                = name;
+            this._name = name;
             this._url = url;
             this._module_code = moduleCode;
         }
         public ModuleResource()
         {
-           
+
         }
     }
 }

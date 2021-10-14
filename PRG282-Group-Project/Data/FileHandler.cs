@@ -13,7 +13,7 @@ namespace PRG282_Group_Project.Data
     {
 
         string filename = "Users";
-        FileHandler()
+       public  FileHandler()
         {
 
         }

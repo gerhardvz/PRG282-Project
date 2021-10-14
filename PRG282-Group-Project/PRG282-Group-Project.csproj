@@ -46,41 +46,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-
-    <Compile Include="Business Layer\Delete_Student.cs" />
-    <Compile Include="Business Layer\IAddStudent.cs" />
-    <Compile Include="Business Layer\Insert_Module.cs" />
-    <Compile Include="Business Layer\Insert_Student.cs" />
-    <Compile Include="Business Layer\Insert_User.cs" />
-    <Compile Include="Business Layer\Module.cs" />
-    <Compile Include="Business Layer\Student.cs" />
-    <Compile Include="Business Layer\UpdateStudent.cs" />   
-    <Compile Include="Business Layer\ModuleResource.cs" />
-    <Compile Include="Business Layer\User.cs" />
-	  
-    <Compile Include="DataTypes\Module.cs" />
-    <Compile Include="DataTypes\Student.cs" />
-    <Compile Include="DataTypes\User.cs" />
+    <Compile Include="Business Layer\StudentBLL\Delete_Student.cs" />
+    <Compile Include="Business Layer\ModuleBLL\Insert_Module.cs" />
+    <Compile Include="Business Layer\ModuleBLL\Module.cs" />
+    <Compile Include="Business Layer\ModuleBLL\ModuleResource.cs" />
+    <Compile Include="Business Layer\ModuleBLL\Read_Modules.cs" />
+    <Compile Include="Business Layer\StudentBLL\Insert_Student.cs" />
+    <Compile Include="Business Layer\StudentBLL\Read_Student.cs" />
+    <Compile Include="Business Layer\StudentBLL\Student.cs" />
+    <Compile Include="Business Layer\StudentBLL\Update_Student.cs" />
+    <Compile Include="Business Layer\UserBLL\Delete_User.cs" />
+    <Compile Include="Business Layer\UserBLL\Update_User.cs" />
+    <Compile Include="Business Layer\UserBLL\Insert_User.cs" />
+    <Compile Include="Business Layer\UserBLL\User.cs" />
     <Compile Include="Data\FileHandler.cs" />
     <Compile Include="Data\HandlerExceptions.cs" />
-  
-
     <Compile Include="Presentation Layer\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-	
     <Compile Include="Presentation Layer\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-		
-    <Compile Include="Presentation Layer\Module.cs">
+    <Compile Include="Presentation Layer\ModuleView.cs">
       <SubType>Form</SubType>
     </Compile>
-		
-    <Compile Include="Presentation Layer\Module.Designer.cs">
-      <DependentUpon>Module.cs</DependentUpon>
+    <Compile Include="Presentation Layer\ModuleView.Designer.cs">
+      <DependentUpon>ModuleView.cs</DependentUpon>
     </Compile>
-		
     <Compile Include="Presentation Layer\Student.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,8 +100,8 @@
     <EmbeddedResource Include="Presentation Layer\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\Module.resx">
-      <DependentUpon>Module.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\ModuleView.resx">
+      <DependentUpon>ModuleView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\Student.resx">
       <DependentUpon>Student.cs</DependentUpon>
@@ -137,15 +129,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-	
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-	
   <ItemGroup>
     <None Include="Presentation Layer\images\login_bg.png" />
   </ItemGroup>
-	
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
- 
