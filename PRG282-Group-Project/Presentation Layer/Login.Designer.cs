@@ -31,8 +31,8 @@ namespace PRG282_Group_Project
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.edtUsername = new System.Windows.Forms.TextBox();
+            this.edtPassword = new System.Windows.Forms.TextBox();
             this.btn_Login = new System.Windows.Forms.Button();
             this.btn_NewAccount = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -57,19 +57,21 @@ namespace PRG282_Group_Project
             this.label2.TabIndex = 1;
             this.label2.Text = "Password";
             // 
-            // textBox1
+            // edtUsername
             // 
-            this.textBox1.Location = new System.Drawing.Point(683, 258);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(106, 22);
-            this.textBox1.TabIndex = 2;
+            this.edtUsername.Location = new System.Drawing.Point(683, 258);
+            this.edtUsername.Name = "edtUsername";
+            this.edtUsername.Size = new System.Drawing.Size(106, 22);
+            this.edtUsername.TabIndex = 2;
             // 
-            // textBox2
+            // edtPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(683, 286);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(106, 22);
-            this.textBox2.TabIndex = 3;
+            this.edtPassword.Location = new System.Drawing.Point(683, 286);
+            this.edtPassword.Name = "edtPassword";
+            this.edtPassword.PasswordChar = '*';
+            this.edtPassword.Size = new System.Drawing.Size(106, 22);
+            this.edtPassword.TabIndex = 3;
+            this.edtPassword.UseSystemPasswordChar = true;
             // 
             // btn_Login
             // 
@@ -98,8 +100,8 @@ namespace PRG282_Group_Project
             this.ClientSize = new System.Drawing.Size(1006, 518);
             this.Controls.Add(this.btn_NewAccount);
             this.Controls.Add(this.btn_Login);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.edtPassword);
+            this.Controls.Add(this.edtUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmLogin";

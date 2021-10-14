@@ -11,13 +11,7 @@ namespace PRG282_Group_Project.Business_Layer.ModuleBLL
    static class Read_Module
     {
         static DataHandler dh = new DataHandler();
-        public static string Read(string ModL)
-        {
-            
-            string ModuleL = dh.getModules(ModL);
-            return ModuleL;
-        }
-
+      
         public static Module GetModule (string code)
         {
             return dh.GetModule(code);

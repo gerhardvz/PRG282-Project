@@ -26,7 +26,7 @@ namespace PRG282_Group_Project.Data
             {
                 userstrings = File.ReadAllLines(filename);
 
-            }catch(FileNotFoundException ex)
+            }catch(FileNotFoundException)
             {
                 throw new UserNotFoundException();
             }
@@ -35,7 +35,7 @@ namespace PRG282_Group_Project.Data
                 string[] parsedUsername = userString.Split(';');
                 if (parsedUsername[0] == username)
                 {
-                    User user = new User(parsedUsername[0], parsedUsername[1], parsedUsername[2]);
+                    User user = new User(parsedUsername[0], parsedUsername[1], Convert.ToBoolean( parsedUsername[2]));
                     return user;
                 }
             }

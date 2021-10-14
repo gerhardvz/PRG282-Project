@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 
 
-namespace PRG282_Group_Project.Business_Layer
+namespace PRG282_Group_Project.Business_Layer.UserBLL
 {
     public class User
     {
@@ -16,13 +16,14 @@ namespace PRG282_Group_Project.Business_Layer
 
         public string UserName { get => _userName; set => _userName = value; }
         public string Password { get => _password; set => _password = EncodePassword(value);  }
-        public bool Encrypted { get => _encrypted; set => _encrypted = changeEncoded(value); }
+        public bool Encrypted { get => _encrypted; set => _encrypted = value; }
 
         public User(string userName, string password, bool encrypted)
         {
             _userName = userName;
-            _password = password;
             _encrypted = encrypted;
+            _password = SavePassword(password);
+           
         }
 
         public bool TestPassword(string password)
@@ -51,7 +52,7 @@ namespace PRG282_Group_Project.Business_Layer
                 _password= EncodePassword(_password);
                 return encoded;
             }
-            _password = _password;
+            
             return encoded;
         }
 

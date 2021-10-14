@@ -89,7 +89,7 @@ namespace PRG282_Group_Project.Data
 
         public void delStudent(Student student)
         {
-            delStudentModule(student);
+            delStudentModules(student);
             using (SqlConnection conn = new SqlConnection(connectionPath))
             {
                 
@@ -203,6 +203,13 @@ namespace PRG282_Group_Project.Data
                     //UPDATE Student Phone
                     updateStudentAddress(student);
                 }
+
+                
+                    foreach(string module in student.ModuleCodes)
+                    {
+                    
+                    }
+                
             }
         }
 
@@ -226,6 +233,34 @@ namespace PRG282_Group_Project.Data
             }
            
 
+        }
+
+        public void addStudentModule(Student student,string moduleCode)
+        {
+
+            using (SqlConnection connection = new SqlConnection(connectionPath))
+            {
+                connection.Open();
+
+                    string updateStudentCmd = $"Insert into student_module(student_nr,module_nr) value({student.StudentNumber},{moduleCode})";
+                    
+                    SqlCommand sqlCommand = new SqlCommand(updateStudentCmd, connection);
+                    sqlCommand.BeginExecuteNonQuery();
+            }
+        }
+
+        public void delStudentModule(Student student, string moduleCode)
+        {
+
+            using (SqlConnection connection = new SqlConnection(connectionPath))
+            {
+                connection.Open();
+
+                string updateStudentCmd = $"delete student_module where student_nr={student.StudentNumber} and module_nr={moduleCode})";
+
+                SqlCommand sqlCommand = new SqlCommand(updateStudentCmd, connection);
+                sqlCommand.BeginExecuteNonQuery();
+            }
         }
 
         public void updateStudentPhone(Student student)
@@ -386,7 +421,7 @@ namespace PRG282_Group_Project.Data
             {
                 conn.Open();
 
-                delStudentModule(module);
+                delStudentModules(module);
           
                 delModuleResource(module);
 
@@ -431,7 +466,7 @@ namespace PRG282_Group_Project.Data
             }
         }
 
-        public void delStudentModule(Student student) {
+        public void delStudentModules(Student student) {
             using (SqlConnection conn = new SqlConnection(connectionPath))
             {
                 conn.Open();
@@ -442,12 +477,24 @@ namespace PRG282_Group_Project.Data
             }
         }
 
-        public void delStudentModule(Module module)
+        public void delStudentModules(Student student, Module module)
         {
             using (SqlConnection conn = new SqlConnection(connectionPath))
             {
                 conn.Open();
-                string cmd = $"delete  FROM student_module where module={module.Code}";
+                string cmd = $"delete  FROM student_module where student_nr={student.StudentNumber} and module_nr={module.Code}";
+
+                SqlCommand sqlCommand = new SqlCommand(cmd, conn);
+                sqlCommand.BeginExecuteNonQuery();
+            }
+        }
+
+        public void delStudentModules(Module module)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionPath))
+            {
+                conn.Open();
+                string cmd = $"delete  FROM student_module where module_nr={module.Code}";
 
                 SqlCommand sqlCommand = new SqlCommand(cmd, conn);
                 sqlCommand.BeginExecuteNonQuery();

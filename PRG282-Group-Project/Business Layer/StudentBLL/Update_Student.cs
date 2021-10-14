@@ -11,6 +11,22 @@ namespace PRG282_Group_Project.Business_Layer.StudentBLL
     {
         static DataHandler dh = new DataHandler();
 
+        static public string UpdateStudent(Student student)
+        {
+            try
+            {
+                dh.updateStudentImage(student);
+                dh.updateStudentAddress(student);
+                dh.updateStudentPhone(student);
+            }
+            catch
+            {
+                return "Could not update Student";
+            }
+            return "Student  updated";
+
+        }
+
         static public string UpdateStudentImage(Student student)
         {
             try

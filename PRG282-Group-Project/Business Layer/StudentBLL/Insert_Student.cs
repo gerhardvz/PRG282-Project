@@ -7,10 +7,10 @@ using PRG282_Group_Project.Data;
 
 namespace PRG282_Group_Project.Business_Layer.StudentBLL
 {
-    class Insert_Student
+    static class Insert_Student
     {
-        DataHandler dh = new DataHandler();
-        public string Insert(Student s)
+        static DataHandler dh = new DataHandler();
+        public static string Insert(Student s)
         {
             try {
                 dh.addStudent(s);
@@ -24,7 +24,7 @@ namespace PRG282_Group_Project.Business_Layer.StudentBLL
             return "Student inserted";
         }
 
-        public string validation()
+        static public string validation()
         {
             throw new NotImplementedException();
         }

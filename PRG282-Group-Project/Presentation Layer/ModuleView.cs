@@ -42,7 +42,7 @@ namespace PRG282_Group_Project.Presentation_Layer
             SelectedModule = Read_Module.GetModule(moduleListView.SelectedItems[0].SubItems[0].Text);
             lblModuleCode.Text = $"{SelectedModule.Code} - {SelectedModule.Name}";
             lblDescription.Text = SelectedModule.Description;
-            moduleResourcesList;
+           
         }
     }
 }

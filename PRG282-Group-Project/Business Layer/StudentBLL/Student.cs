@@ -18,7 +18,7 @@ namespace PRG282_Group_Project.Business_Layer.StudentBLL
         string _phone;
         string _address;
         List<string> _modulecodes;
-
+        
         public int StudentNumber { get => _number; set => _number = value; }
         public string Name { get => _name; set => _name = value; }
         public string Surname { get => _surname; set => _surname = value; }
@@ -71,6 +71,9 @@ namespace PRG282_Group_Project.Business_Layer.StudentBLL
         {
             this._modulecodes.Add(moduleCode);
         }
+       
+
+       
 
         override
       public string ToString()

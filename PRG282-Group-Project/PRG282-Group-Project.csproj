@@ -55,6 +55,7 @@
     <Compile Include="Business Layer\StudentBLL\Read_Student.cs" />
     <Compile Include="Business Layer\StudentBLL\Student.cs" />
     <Compile Include="Business Layer\StudentBLL\Update_Student.cs" />
+    <Compile Include="Business Layer\UserBLL\Read_User.cs" />
     <Compile Include="Business Layer\UserBLL\Delete_User.cs" />
     <Compile Include="Business Layer\UserBLL\Update_User.cs" />
     <Compile Include="Business Layer\UserBLL\Insert_User.cs" />

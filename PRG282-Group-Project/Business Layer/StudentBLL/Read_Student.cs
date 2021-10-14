@@ -7,10 +7,10 @@ using PRG282_Group_Project.Data;
 
 namespace PRG282_Group_Project.Business_Layer.StudentBLL
 {
-    class Read_Student
+    static class Read_Student
     {
-        DataHandler dh = new DataHandler();
-        public string getStudent(Student st)
+        static DataHandler dh = new DataHandler();
+        static public string getStudent(Student st)
         {
             try
             {
@@ -23,21 +23,48 @@ namespace PRG282_Group_Project.Business_Layer.StudentBLL
            
         }
 
-        public Student getStudent(string studentNr)
+        static  public Student getStudent(string studentNr)
         {
             Student student = new Student();
             student.StudentNumber = student.StudentNumber;
             try
             {
-                return dh.getStudent(student);
+                student = dh.getStudent(student);
+                student.addModules(getStudentModules(student.StudentNumber));
+                return student;
             }
             catch
             {
                 return new Student();
             }
         }
-    
-        public string validation()
+
+        static public List<string> getStudentModules(int studentNr)
+        {
+            Student student = new Student();
+            student.StudentNumber = studentNr;
+            return dh.getStudentModuleList(student);
+        }
+        static public List<string> addStudentModules(int studentNr,string moduleCode)
+        {
+            //Returns List of current Modules after adding
+            Student student = new Student();
+            student.StudentNumber = studentNr;
+             dh.addStudentModule(student,moduleCode);
+            return getStudentModules(studentNr);
+        }
+
+        static public List<string> delStudentModules(int studentNr, string moduleCode)
+        {
+            //Returns List of current Modules after deleting
+            Student student = new Student();
+            student.StudentNumber = studentNr;
+             dh.delStudentModule(student,moduleCode);
+            return getStudentModules(studentNr);
+        }
+
+
+        static public string validation()
         {
             throw new NotImplementedException();
         }

@@ -20,12 +20,12 @@ namespace PRG282_Group_Project.Presentation_Layer
 
         private void btnStudents_Click(object sender, EventArgs e)
         {
-
+            //Open Student View
         }
 
         private void btnModules_Click(object sender, EventArgs e)
         {
-
+            //OPen Modules View
         }
     }
 }

@@ -40,6 +40,7 @@ namespace PRG282_Group_Project
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAddStudent = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btn_Update = new System.Windows.Forms.Button();
@@ -48,15 +49,14 @@ namespace PRG282_Group_Project
             this.listView1 = new System.Windows.Forms.ListView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnAddModule = new System.Windows.Forms.Button();
             this.btnRemoveModule = new System.Windows.Forms.Button();
+            this.btnAddModule = new System.Windows.Forms.Button();
             this.studentListView = new System.Windows.Forms.ListView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -161,7 +161,7 @@ namespace PRG282_Group_Project
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Controls.Add(this.btnAddStudent);
             this.panel1.Controls.Add(this.btnRefresh);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Location = new System.Drawing.Point(40, 408);
@@ -169,6 +169,16 @@ namespace PRG282_Group_Project
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(356, 51);
             this.panel1.TabIndex = 18;
+            // 
+            // btnAddStudent
+            // 
+            this.btnAddStudent.Location = new System.Drawing.Point(12, 11);
+            this.btnAddStudent.Name = "btnAddStudent";
+            this.btnAddStudent.Size = new System.Drawing.Size(88, 28);
+            this.btnAddStudent.TabIndex = 3;
+            this.btnAddStudent.Text = "Add";
+            this.btnAddStudent.UseVisualStyleBackColor = true;
+            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
             // btnRefresh
             // 
@@ -180,6 +190,7 @@ namespace PRG282_Group_Project
             this.btnRefresh.TabIndex = 2;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnDelete
             // 
@@ -190,6 +201,7 @@ namespace PRG282_Group_Project
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btn_Update
             // 
@@ -200,6 +212,7 @@ namespace PRG282_Group_Project
             this.btn_Update.TabIndex = 0;
             this.btn_Update.Text = "Update";
             this.btn_Update.UseVisualStyleBackColor = true;
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // btn_Log_Out
             // 
@@ -211,6 +224,7 @@ namespace PRG282_Group_Project
             this.btn_Log_Out.TabIndex = 3;
             this.btn_Log_Out.Text = "Log Out";
             this.btn_Log_Out.UseVisualStyleBackColor = true;
+            this.btn_Log_Out.Click += new System.EventHandler(this.btn_Log_Out_Click);
             // 
             // panel2
             // 
@@ -263,6 +277,16 @@ namespace PRG282_Group_Project
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Modules";
             // 
+            // btnRemoveModule
+            // 
+            this.btnRemoveModule.Location = new System.Drawing.Point(174, 198);
+            this.btnRemoveModule.Name = "btnRemoveModule";
+            this.btnRemoveModule.Size = new System.Drawing.Size(83, 34);
+            this.btnRemoveModule.TabIndex = 22;
+            this.btnRemoveModule.Text = "Remove";
+            this.btnRemoveModule.UseVisualStyleBackColor = true;
+            this.btnRemoveModule.Click += new System.EventHandler(this.btnRemoveModule_Click);
+            // 
             // btnAddModule
             // 
             this.btnAddModule.Location = new System.Drawing.Point(174, 160);
@@ -272,15 +296,6 @@ namespace PRG282_Group_Project
             this.btnAddModule.Text = "Add";
             this.btnAddModule.UseVisualStyleBackColor = true;
             this.btnAddModule.Click += new System.EventHandler(this.btnAddModule_Click);
-            // 
-            // btnRemoveModule
-            // 
-            this.btnRemoveModule.Location = new System.Drawing.Point(174, 198);
-            this.btnRemoveModule.Name = "btnRemoveModule";
-            this.btnRemoveModule.Size = new System.Drawing.Size(83, 34);
-            this.btnRemoveModule.TabIndex = 22;
-            this.btnRemoveModule.Text = "Remove";
-            this.btnRemoveModule.UseVisualStyleBackColor = true;
             // 
             // studentListView
             // 
@@ -292,6 +307,7 @@ namespace PRG282_Group_Project
             this.studentListView.TabIndex = 22;
             this.studentListView.UseCompatibleStateImageBehavior = false;
             this.studentListView.View = System.Windows.Forms.View.Details;
+            this.studentListView.SelectedIndexChanged += new System.EventHandler(this.studentListView_SelectedIndexChanged);
             // 
             // groupBox3
             // 
@@ -305,12 +321,17 @@ namespace PRG282_Group_Project
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Student List";
             // 
-            // textBox1
+            // groupBox4
             // 
-            this.textBox1.Location = new System.Drawing.Point(9, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 23;
+            this.groupBox4.Controls.Add(this.label1);
+            this.groupBox4.Controls.Add(this.btnSearch);
+            this.groupBox4.Controls.Add(this.textBox1);
+            this.groupBox4.Location = new System.Drawing.Point(429, 37);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(131, 100);
+            this.groupBox4.TabIndex = 26;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Search";
             // 
             // label1
             // 
@@ -329,27 +350,14 @@ namespace PRG282_Group_Project
             this.btnSearch.TabIndex = 25;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // groupBox4
+            // textBox1
             // 
-            this.groupBox4.Controls.Add(this.label1);
-            this.groupBox4.Controls.Add(this.btnSearch);
-            this.groupBox4.Controls.Add(this.textBox1);
-            this.groupBox4.Location = new System.Drawing.Point(429, 37);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(131, 100);
-            this.groupBox4.TabIndex = 26;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Search";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(12, 11);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(88, 28);
-            this.btnAdd.TabIndex = 3;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.textBox1.Location = new System.Drawing.Point(9, 38);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 23;
             // 
             // frmStudent
             // 
@@ -395,7 +403,7 @@ namespace PRG282_Group_Project
         private System.Windows.Forms.Button btn_Log_Out;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnAddStudent;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnRemoveModule;
